@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>&lt;no title&gt; &#8212; Data Mining</title>
+    <title>tugas 3 KNN &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="tugas4.html" />
+    <link rel="next" title="tugas 4 naive bayes" href="tugas4.html" />
     <link rel="prev" title="&lt;no title&gt;" href="tugas2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -113,11 +113,26 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="tugas1.html">
    <strong>
     TUGAS 1
+   </strong>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   <strong>
+    tugas 3
+   </strong>
+   KNN
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tugas4.html">
+   <strong>
+    tugas 4 naive bayes
    </strong>
   </a>
  </li>
@@ -305,50 +320,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><no title></h1>
+                <h1>tugas 3 KNN</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -356,7 +344,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-3-knn">
+<h1><strong>tugas 3</strong> KNN<a class="headerlink" href="#tugas-3-knn" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="c1">#read in the data using pandas</span>
@@ -369,7 +359,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-54c0a5ad-0b26-43b8-8c56-dacd10871f9b">
+  <div id="df-9f8dd57b-e2ee-4e2a-a06d-14a27f9d262d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -440,7 +430,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-54c0a5ad-0b26-43b8-8c56-dacd10871f9b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9f8dd57b-e2ee-4e2a-a06d-14a27f9d262d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -491,12 +481,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-54c0a5ad-0b26-43b8-8c56-dacd10871f9b button.colab-df-convert');
+          document.querySelector('#df-9f8dd57b-e2ee-4e2a-a06d-14a27f9d262d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-54c0a5ad-0b26-43b8-8c56-dacd10871f9b');
+          const element = document.querySelector('#df-9f8dd57b-e2ee-4e2a-a06d-14a27f9d262d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -553,7 +543,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9eb1cbae-113a-42d3-a218-9a2fef630f76">
+  <div id="df-a98ca056-aca8-4b79-9237-b217ed5142f1">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -618,7 +608,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-9eb1cbae-113a-42d3-a218-9a2fef630f76')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a98ca056-aca8-4b79-9237-b217ed5142f1')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -669,12 +659,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-9eb1cbae-113a-42d3-a218-9a2fef630f76 button.colab-df-convert');
+          document.querySelector('#df-a98ca056-aca8-4b79-9237-b217ed5142f1 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-9eb1cbae-113a-42d3-a218-9a2fef630f76');
+          const element = document.querySelector('#df-a98ca056-aca8-4b79-9237-b217ed5142f1');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -848,6 +838,7 @@ cv_scores mean:0.9666666666666668
 </div>
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -886,7 +877,7 @@ cv_scores mean:0.9666666666666668
     <a class='right-next' id="next-link" href="tugas4.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">&lt;no title&gt;</p>
+        <p class="prev-next-title"><strong>tugas 4 naive bayes</strong></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
