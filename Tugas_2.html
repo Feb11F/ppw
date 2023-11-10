@@ -479,7 +479,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8347d376-144e-43e6-83e1-6fd4294233e8" class="colab-df-container">
+  <div id="df-a07b8119-21a1-489a-8dc2-97583903506d" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -601,7 +601,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8347d376-144e-43e6-83e1-6fd4294233e8')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a07b8119-21a1-489a-8dc2-97583903506d')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -653,12 +653,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8347d376-144e-43e6-83e1-6fd4294233e8 button.colab-df-convert');
+        document.querySelector('#df-a07b8119-21a1-489a-8dc2-97583903506d button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8347d376-144e-43e6-83e1-6fd4294233e8');
+        const element = document.querySelector('#df-a07b8119-21a1-489a-8dc2-97583903506d');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -793,7 +793,7 @@ Name: Tokenizing, Length: 828, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-1154565c-5922-4a43-9a0d-2d6d6a6accbc" class="colab-df-container">
+  <div id="df-7cf0b14e-d223-4595-bffc-63e2b5691ea6" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -951,7 +951,7 @@ Name: Tokenizing, Length: 828, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-1154565c-5922-4a43-9a0d-2d6d6a6accbc')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7cf0b14e-d223-4595-bffc-63e2b5691ea6')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1003,12 +1003,12 @@ Name: Tokenizing, Length: 828, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-1154565c-5922-4a43-9a0d-2d6d6a6accbc button.colab-df-convert');
+        document.querySelector('#df-7cf0b14e-d223-4595-bffc-63e2b5691ea6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-1154565c-5922-4a43-9a0d-2d6d6a6accbc');
+        const element = document.querySelector('#df-7cf0b14e-d223-4595-bffc-63e2b5691ea6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1177,11 +1177,25 @@ Name: Full Text, Length: 828, dtype: object
 <span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         removalCount = len(self.removals)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
-<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">             if self.process_is_stopped:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="s2">     def accept(self, visitor):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span><span class="s2">         visitor.visit(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="s2">     def accept_visitors(self, visitors):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">         for disambiguator in self.disambiguators:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2">             result = disambiguator.disambiguate(context.current_word)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span><span class="s2">             if context.dictionary.contains(result):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2">                 break</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s2"> </span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
