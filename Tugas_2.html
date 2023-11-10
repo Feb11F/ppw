@@ -479,7 +479,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-57f55429-2039-4e06-bd1c-0d295111600e" class="colab-df-container">
+  <div id="df-8347d376-144e-43e6-83e1-6fd4294233e8" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -601,7 +601,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-57f55429-2039-4e06-bd1c-0d295111600e')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-8347d376-144e-43e6-83e1-6fd4294233e8')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -653,12 +653,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-57f55429-2039-4e06-bd1c-0d295111600e button.colab-df-convert');
+        document.querySelector('#df-8347d376-144e-43e6-83e1-6fd4294233e8 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-57f55429-2039-4e06-bd1c-0d295111600e');
+        const element = document.querySelector('#df-8347d376-144e-43e6-83e1-6fd4294233e8');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -793,7 +793,7 @@ Name: Tokenizing, Length: 828, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4197f9ac-de74-4b1c-8f87-0568013268d1" class="colab-df-container">
+  <div id="df-1154565c-5922-4a43-9a0d-2d6d6a6accbc" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -951,7 +951,7 @@ Name: Tokenizing, Length: 828, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-4197f9ac-de74-4b1c-8f87-0568013268d1')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1154565c-5922-4a43-9a0d-2d6d6a6accbc')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1003,12 +1003,12 @@ Name: Tokenizing, Length: 828, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-4197f9ac-de74-4b1c-8f87-0568013268d1 button.colab-df-convert');
+        document.querySelector('#df-1154565c-5922-4a43-9a0d-2d6d6a6accbc button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-4197f9ac-de74-4b1c-8f87-0568013268d1');
+        const element = document.querySelector('#df-1154565c-5922-4a43-9a0d-2d6d6a6accbc');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1170,11 +1170,18 @@ Name: Full Text, Length: 828, dtype: object
 <span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
 <span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
-<span class="g g-Whitespace">     </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
-<span class="ne">---&gt; </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
 <span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">             if self.process_is_stopped:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
