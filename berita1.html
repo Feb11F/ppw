@@ -1,0 +1,1360 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>TUGAS 4 &#8212; DataMining</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'berita1';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Scraping bantennews.com" href="scrapingbantennews.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/feb.jpeg" class="logo__image only-light" alt="DataMining - Home"/>
+    <script>document.write(`<img src="_static/feb.jpeg" class="logo__image only-dark" alt="DataMining - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CrawlingPTA.html">Crawling PTA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas_2.html">Import dataset</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA TOPIC MODELING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scrapingbantennews.html">Scraping bantennews.com</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS 4</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Feb11F/datamining.git/blob/gh-pages/_sources/berita1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Feb11F/datamining.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Feb11F/datamining.git/issues/new?title=Issue%20on%20page%20%2Fberita1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/berita1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUGAS 4</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tugas-4">
+<h1>TUGAS 4<a class="headerlink" href="#tugas-4" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">cosine_similarity</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
+
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Feb11F/dataset/main/beritabantn.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-88761344-6234-498e-b493-a400a33ef697" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Isi</th>
+      <th>Kategori</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Rambu Lalu Lintas di Jalan Tol Dicuri, Pengelo...</td>
+      <td>KAB. SERANG– Sejumlah rambu lalu lintas di Tol...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Arab Saudi Jadi Tuan Rumah Piala Dunia 2034 Se...</td>
+      <td>JAKARTA– Arab Saudi akan menjadi tuan rumah Pi...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>107 Anggota Jaringan JI dan JAD Asal Banten Le...</td>
+      <td>SERANG– Sebanyak 107 orang mantan anggota Jema...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Relawan Ganjar Mahfud Gelar Pengukuhan Gapura ...</td>
+      <td>LEBAK –Relawan Ganjar Pranowo dan Mahfud MD me...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dua Warga Lebak Tewas Tertimbun Galian Tanah</td>
+      <td>LEBAK– Diki (19) warga Kecamatan Sajira dan Ad...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Gibran Rakabuming Siap Hadapi Mahfud MD dan Ca...</td>
+      <td>SERANG– Calon wakil Presiden (Cawapres), Gibra...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.333 Caleg DPRD Banten Resmi Masuk DCT Pemilu...</td>
+      <td>SERANG– Sebanyak 1.333 calon anggota legislati...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kades Lontar Akui Pakai Duit Desa untuk Hibura...</td>
+      <td>SERANG– Sidang kasus korupsi dana Desa Lontar ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Polisi Tahan Pengelola Korsel yang Tewaskan Bo...</td>
+      <td>SERANG– Pengelola korsel di Kampung Cileuweung...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Usai Video Mesum Viral, Mantan Guru di Carenan...</td>
+      <td>KAB. SERANG– Usai kasusnya viral, seorang mant...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Grand Final AXIS Nation Cup 2023, 10 Tim Futsa...</td>
+      <td>SERANG–  Turnamen futsal terbesar antar-SMA se...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Pengidap HIV Cabuli Bocah Anak Tetangga di Pan...</td>
+      <td>PANDEGLANG– Satuan Reserse Kriminal (Satreskri...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yudi Budi Wibowo Serap Aspirasi Masyarakat Tan...</td>
+      <td>TANGSEL– Anggota DPRD Provinsi Banten, Yudi Bu...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>22 Club Bersaing Kerjurda Bola Voli Provinsi B...</td>
+      <td>TANGERANG– Kota Tangerang dipercaya menjadi tu...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sudah Final dan Mengikat, Aturan Main Pilpres ...</td>
+      <td>SERANG– Ketua Majelis Kehormatan Mahkamah Kons...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Korupsi Rp988 Juta, Mantan Kades Lontar Ditunt...</td>
+      <td>SERANG– Mantan Kepala Desa Lontar, Kecamatan T...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hadapi Panama, Pelatih Minta Pemain Timnas Ind...</td>
+      <td>JAKARTA– Pemain Timnas Indonesia U-17 Welber J...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Korupsi Rp 40 Miliar, Anggota Badan Pemeriksa ...</td>
+      <td>JAKARTA– Anggota III Badan Pemeriksa Keuangan ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Vonis Mantan Kabid Dinsos Terdakwa Korupsi Dan...</td>
+      <td>SERANG– Mantan Kepala Bidang Perlindungan, Jam...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Dorong Pemilu Damai, Polres Serang Gandeng Ulama</td>
+      <td>KAB. SERANG– Dalam rangka menciptakan Pemilu 2...</td>
+      <td>Politik</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-88761344-6234-498e-b493-a400a33ef697')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-88761344-6234-498e-b493-a400a33ef697 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-88761344-6234-498e-b493-a400a33ef697');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Judul       0
+Isi         0
+Kategori    0
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cleaning</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+  <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s.?!,]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">text</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cleaning&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Isi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">cleaning</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cleaning&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     KAB. SERANG Sejumlah rambu lalu lintas di Tol ...
+1     JAKARTA Arab Saudi akan menjadi tuan rumah Pia...
+2     SERANG Sebanyak 107 orang mantan anggota Jemaa...
+3     LEBAK Relawan Ganjar Pranowo dan Mahfud MD men...
+4     LEBAK Diki 19 warga Kecamatan Sajira dan Adend...
+5     SERANG Calon wakil Presiden Cawapres, Gibran R...
+6     SERANG Sebanyak 1.333 calon anggota legislatif...
+7     SERANG Sidang kasus korupsi dana Desa Lontar K...
+8     SERANG Pengelola korsel di Kampung Cileuweung,...
+9     KAB. SERANG Usai kasusnya viral, seorang manta...
+10    SERANG  Turnamen futsal terbesar antarSMA seIn...
+11    PANDEGLANG Satuan Reserse Kriminal Satreskrim ...
+12    TANGSEL Anggota DPRD Provinsi Banten, Yudi Bud...
+13    TANGERANG Kota Tangerang dipercaya menjadi tua...
+14    SERANG Ketua Majelis Kehormatan Mahkamah Konst...
+15    SERANG Mantan Kepala Desa Lontar, Kecamatan Ti...
+16    JAKARTA Pemain Timnas Indonesia U17 Welber Jar...
+17    JAKARTA Anggota III Badan Pemeriksa Keuangan B...
+18    SERANG Mantan Kepala Bidang Perlindungan, Jami...
+19    KAB. SERANG Dalam rangka menciptakan Pemilu 20...
+Name: Cleaning, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tokenizer</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+  <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+  <span class="k">return</span> <span class="n">sent_tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tokenizing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cleaning&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Tokenizing&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     [kab., serang sejumlah rambu lalu lintas di to...
+1     [jakarta arab saudi akan menjadi tuan rumah pi...
+2     [serang sebanyak 107 orang mantan anggota jema...
+3     [lebak relawan ganjar pranowo dan mahfud md me...
+4     [lebak diki 19 warga kecamatan sajira dan aden...
+5     [serang calon wakil presiden cawapres, gibran ...
+6     [serang sebanyak 1.333 calon anggota legislati...
+7     [serang sidang kasus korupsi dana desa lontar ...
+8     [serang pengelola korsel di kampung cileuweung...
+9     [kab., serang usai kasusnya viral, seorang man...
+10    [serang  turnamen futsal terbesar antarsma sei...
+11    [pandeglang satuan reserse kriminal satreskrim...
+12    [tangsel anggota dprd provinsi banten, yudi bu...
+13    [tangerang kota tangerang dipercaya menjadi tu...
+14    [serang ketua majelis kehormatan mahkamah kons...
+15    [serang mantan kepala desa lontar, kecamatan t...
+16    [jakarta pemain timnas indonesia u17 welber ja...
+17    [jakarta anggota iii badan pemeriksa keuangan ...
+18    [serang mantan kepala bidang perlindungan, jam...
+19    [kab., serang dalam rangka menciptakan pemilu ...
+Name: Tokenizing, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">graph_cosine_sim</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.11</span><span class="p">):</span>
+  <span class="c1"># TFIDF</span>
+  <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+  <span class="n">tfidf</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="n">cos_sim</span> <span class="o">=</span> <span class="n">cosine_similarity</span><span class="p">(</span><span class="n">tfidf</span><span class="p">)</span>
+  <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+
+  <span class="c1"># Mengisi nilai similarity antara kalimat ke dalam edges (Garis Penghubung)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)):</span>
+      <span class="n">sim</span> <span class="o">=</span> <span class="n">cos_sim</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
+      <span class="k">if</span> <span class="n">sim</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">sim</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">):</span>
+  <span class="c1"># Menggambar graf dengan canvas yang diperbesar</span>
+  <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>  <span class="c1"># Menentukan posisi simpul</span>
+  <span class="n">labels</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">get_edge_attributes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+
+  <span class="c1"># Menentukan ukuran canvas</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+
+  <span class="c1"># Menggambar graf dengan ukuran canvas yang diperbesar</span>
+  <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">)</span>
+  <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edge_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edge_labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">font_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">summarization</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.11</span><span class="p">,</span> <span class="n">show_centrality</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+  <span class="c1"># Memasukkan Nilai Cosine Similirity ke dalam Graph</span>
+  <span class="n">G</span> <span class="o">=</span> <span class="n">graph_cosine_sim</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+
+  <span class="c1"># Menghitung nilai dari closeness centrality</span>
+  <span class="n">centrality</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">closeness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">show_centrality</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nilai Closeness Centrality Dokumen Ke - </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">centrality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+  <span class="c1"># Menyusun Kalimat berdasarkan nilai Closeness Centrality tertinggi dan lebih dari treshold</span>
+  <span class="n">centrality</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">centrality</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span> <span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+
+  <span class="n">summary_sentences</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">centr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">centrality</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="p">:</span>
+      <span class="n">summary_sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">centr</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+  <span class="k">return</span> <span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">summary_sentences</span><span class="p">),</span> <span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">summarization</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Tokenizing&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">show_centrality</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1 : {1: 0.6666666666666666, 3: 1.0, 2: 0.6666666666666666}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_graph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b33d9e8a523f536c7acd543b39053cee60c752215eee32c9000c5df2368dc5d1.png" src="_images/b33d9e8a523f536c7acd543b39053cee60c752215eee32c9000c5df2368dc5d1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span> <span class="p">:</span> <span class="n">summarization</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Tokenizing&#39;</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">row</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">show_centrality</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1 : {1: 0.75, 3: 0.75, 5: 0.5, 2: 0.5}
+Nilai Closeness Centrality Dokumen Ke - 2 : {0: 1.0, 1: 1.0, 2: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 3 : {0: 1.0, 1: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 4 : {}
+Nilai Closeness Centrality Dokumen Ke - 5 : {0: 0.8333333333333334, 1: 0.5, 3: 0.7142857142857143, 4: 0.8333333333333334, 5: 0.625, 2: 0.5555555555555556}
+Nilai Closeness Centrality Dokumen Ke - 6 : {0: 0.2, 1: 0.2, 2: 0.3, 3: 0.44999999999999996, 4: 0.44999999999999996, 5: 0.3}
+Nilai Closeness Centrality Dokumen Ke - 7 : {0: 0.7272727272727273, 1: 0.8, 2: 0.8, 4: 0.8, 5: 0.8, 6: 1.0, 3: 0.7272727272727273, 7: 0.5714285714285714, 8: 0.5714285714285714}
+Nilai Closeness Centrality Dokumen Ke - 8 : {0: 0.8333333333333334, 1: 0.5555555555555556, 2: 0.7142857142857143, 3: 0.7142857142857143, 5: 0.5, 4: 0.45454545454545453}
+Nilai Closeness Centrality Dokumen Ke - 9 : {1: 0.42857142857142855, 8: 0.6666666666666666, 2: 0.5454545454545454, 3: 0.8571428571428571, 7: 0.6666666666666666, 5: 0.6, 6: 0.75}
+Nilai Closeness Centrality Dokumen Ke - 10 : {2: 0.5833333333333334, 6: 0.7777777777777778, 8: 0.6363636363636364, 9: 0.7, 3: 0.4117647058823529, 4: 0.6363636363636364, 5: 0.5833333333333334, 7: 0.5833333333333334}
+Nilai Closeness Centrality Dokumen Ke - 11 : {0: 0.5, 4: 0.75, 6: 0.6, 8: 0.47368421052631576, 1: 0.45, 2: 0.6, 3: 0.47368421052631576, 5: 0.6428571428571429, 7: 0.45, 9: 0.32142857142857145}
+Nilai Closeness Centrality Dokumen Ke - 12 : {0: 0.625, 1: 0.5555555555555556, 2: 0.7142857142857143, 3: 0.4166666666666667, 5: 0.5555555555555556, 4: 0.38461538461538464}
+Nilai Closeness Centrality Dokumen Ke - 13 : {0: 1.0, 1: 0.75, 2: 1.0, 3: 0.75}
+Nilai Closeness Centrality Dokumen Ke - 14 : {0: 0.6, 1: 0.75, 6: 0.6666666666666666, 2: 0.75, 3: 0.75, 4: 0.8571428571428571, 5: 0.75}
+Nilai Closeness Centrality Dokumen Ke - 15 : {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 16 : {0: 1.0, 1: 0.6, 2: 0.75, 3: 0.75}
+Nilai Closeness Centrality Dokumen Ke - 17 : {0: 0.5555555555555556, 3: 0.8333333333333334, 5: 0.7142857142857143, 1: 0.7142857142857143, 2: 0.45454545454545453, 4: 0.5}
+Nilai Closeness Centrality Dokumen Ke - 18 : {0: 0.5, 5: 0.7142857142857143, 6: 0.5555555555555556, 8: 0.5, 1: 0.6666666666666666, 2: 0.45454545454545453, 3: 0.5263157894736842, 7: 0.5882352941176471, 9: 0.625, 4: 0.5, 10: 0.4}
+Nilai Closeness Centrality Dokumen Ke - 19 : {0: 0.6666666666666666, 3: 0.75, 4: 1.0, 6: 0.8571428571428571, 1: 0.6666666666666666, 5: 0.75, 2: 0.5454545454545454}
+Nilai Closeness Centrality Dokumen Ke - 20 : {1: 1.0, 2: 1.0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s2">&quot;Summary&quot;</span><span class="p">,</span> <span class="s2">&quot;Kategori&quot;</span><span class="p">]]</span>
+<span class="n">new_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-0a2e6812-ffcb-4f1d-826a-16f340b1ab59" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+      <th>Kategori</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>serang sejumlah rambu lalu lintas di tol tange...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>jakarta arab saudi akan menjadi tuan rumah pia...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>serang sebanyak 107 orang mantan anggota jemaa...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td></td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>lebak diki 19 warga kecamatan sajira dan adend...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>dia menyerahkan keputusannya kepada pdip.ya it...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>berkurangnya calon tersebut ada pada 3 partai ...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>serang sidang kasus korupsi dana desa lontar k...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>diduga, korban tersetrum karena memegang pagar...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>ketika itu dia sudah bukan lagi menjadi guru m...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>harapan kami melalui axis nation cup ini bisa ...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>masih ditahan di polres pandeglang karena belu...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>tangsel anggota dprd provinsi banten, yudi bud...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>dari kejurda ini diharapkan muncul atletatlet ...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>serang ketua majelis kehormatan mahkamah konst...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>serang mantan kepala desa lontar, kecamatan ti...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>komunikasi juga harus bagus saat masuk lapanga...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>lalu, ada mitsubishi outlander sport minibus 2...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>sedangkan rp304 juta sisanya ia tilap untuk ke...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>serang dalam rangka menciptakan pemilu 2024 ya...</td>
+      <td>Politik</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+      
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0a2e6812-ffcb-4f1d-826a-16f340b1ab59')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+      
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+    
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-0a2e6812-ffcb-4f1d-826a-16f340b1ab59 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-0a2e6812-ffcb-4f1d-826a-16f340b1ab59');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+  
+    </div>
+  </div>
+  </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;Data Berita Hasil Ringkasan.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Summary&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;serang sejumlah rambu lalu lintas di tol tangerang  merak dan serang  panimbang tepatnya di kabupaten serang, banten hilang. namun juga berpotensi menyebabkan kecelakaan pada pengguna jalan.kalau ramburambu ini kaitannya dihilangkan ini menjadi potensi kecelakaan bagi pengguna jalan, ujarnya pada konferensi pers terkait penangkapan 6 pencuri rambu tol di mapolres serang, selasa 24102023.baca jugakomplotan pencuri rambu lalu lintas di jalan tol tangerang  merak dan serpan dibekuk polisisamsul menjelaskan para pengguna jalan bisa mengalami kebingungan lantaran petunjuk arah atau peringatan di jalan tol tidak ada.pertama pengguna jalan kehilangan arah apakah ini tadinya kecepatannya berapa atau dilarang parkir atau petunjukpetunjuk lainnya sehingga pembuat jalan agak kehilangan arah kebingungan, tambahnya.sebelumnya diwartakan, enam pencuri rambu lalu lintas di jalan tol tangerang  merak dan serang  panimbang tepatnya di wilayah kabupaten serang, banten ditangkap polisi. hasil barang curian berupa rambu lalu lintas itu dijualnya kepada lapak barangbarang bekas dengan harga rp4 juta.setelah dilakukan penggeledahan, ditemukan barang bukti yang ada di dalam mobil truk dan beberapa orang tersangka diamankan, ujar kapolres serang akbp wiwin setiawan.kini keenam pelaku harus meringkuk di balik jeruji besi dan dikenakan pasal 363 kuhpidana ancaman penjara maksimal 7 tahun penjara.nindrared hilangnya atribut jalan itu lantaran dicuri oleh sekelompok orang.papan rambu yang dicuri oleh komplotan tersebut diantaranya rambu peringatan kepada para pengguna jalan untuk berhatihati sebab adanya pekerjaan di jalan tol hingga tanda larangan mendahului dari sebelah kiri.kepala divisi operasi dan pemeliharaan pt astra infra toll road, samsul mengatakan imbas dari pencurian ramburambu tersebut tak hanya menyebabkan kerugian bagi pengelola jalan tol.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorizer_summary</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+<span class="n">X_summary</span> <span class="o">=</span> <span class="n">vectorizer_summary</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Summary&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Kategori&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train_summary</span><span class="p">,</span> <span class="n">X_test_summary</span><span class="p">,</span> <span class="n">y_train_summary</span><span class="p">,</span> <span class="n">y_test_summary</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_summary</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inisialisasi model Naive Bayes Gaussian</span>
+<span class="n">gnb_summary</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+
+<span class="c1"># Melatih model menggunakan data latih</span>
+<span class="n">gnb_summary</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_summary</span><span class="p">,</span> <span class="n">y_train_summary</span><span class="p">)</span>
+
+<span class="c1"># Membuat prediksi pada data uji</span>
+<span class="n">y_pred_gnb_summary</span> <span class="o">=</span> <span class="n">gnb_summary</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengukur kinerja model dengan menghitung akurasi atau metrik lain yang relevan</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test_summary</span><span class="p">,</span> <span class="n">y_pred_gnb_summary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Akurasi: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test_summary</span><span class="p">,</span> <span class="n">y_pred_gnb_summary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Report Klasifikasi:</span><span class="se">\n</span><span class="si">{</span><span class="n">report</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Report Klasifikasi:
+              precision    recall  f1-score   support
+
+     Politik       1.00      1.00      1.00         1
+       Sport       1.00      1.00      1.00         1
+       hukum       1.00      1.00      1.00         4
+
+    accuracy                           1.00         6
+   macro avg       1.00      1.00      1.00         6
+weighted avg       1.00      1.00      1.00         6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">):</span>
+  <span class="c1"># Membuat plot confusion matrix</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+  <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues&#39;</span><span class="p">,</span> <span class="n">xticklabels</span><span class="o">=</span><span class="n">gnb_summary</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">gnb_summary</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Predicted&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Confusion Matrix&#39;</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test_summary</span><span class="p">,</span> <span class="n">y_pred_gnb_summary</span><span class="p">)</span>
+<span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/43930dc84d506bbff5d2d7bb61eff016fc8358c2a63916509fcb3f7f7bcef091.png" src="_images/43930dc84d506bbff5d2d7bb61eff016fc8358c2a63916509fcb3f7f7bcef091.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_data</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;SERANG – Prajurit Grup 1 Kopassus kembali menorehkan prestasi dalam bidang Lomba Lari pada CT Arsa Charity Fun Run 2023 di BSD Tanggerang dan Kota Wisata Run 2023 di Malang. Pada even tersebut yang digelar Sabtu, 18 November 2023 prajurit Grup 1 Kopassus menorehkan 2 prestasi pada even Lari Kategori 10 K. Praka Gunawan berhasil mendatkan Juara 3 dengan waktu 33’50. Sedangakan Sertu Amat Sucipto Parapat mendapatkan Juara 4 dengan waktu 33’51. Berbeda dengan 2 Prajurit Grup 1 Kopassus lainnya yang juga mengukir prestasi dalam Lomba Lari Kota Wisata Run 2023 di Malang hari Minggu, 19 November 2023. Prajurit Grup 1 Kopassus dapat menorehkan prestasi puncak pada even Lari Kategori 10 K. Sertu Amat Sucipto Parapat mendapatkan juara 1 dengan waktu 33’33” dan Amirudin mendapatkan Juara 3 dengan waktu 35’20”. Prestasi tersebut tentunya tidak terlepas dari arahan dan program yang diberikan oleh Komandan Grup 1 Kopassus, Kolonel Inf Irfan Amir. Prestasi ini tentunya sebagai motivasi untuk terus memberikan hasil yang terbaik dalam setiap even perlombaan yang dilaksanakan.&quot;</span><span class="p">]</span>
+<span class="n">new_data_summary</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="n">summarization</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">(</span><span class="n">new_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">new_data_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pada even tersebut yang digelar sabtu, 18 november 2023 prajurit grup 1 kopassus menorehkan 2 prestasi pada even lari kategori 10 k. praka gunawan berhasil mendatkan juara 3 dengan waktu 33’50. berbeda dengan 2 prajurit grup 1 kopassus lainnya yang juga mengukir prestasi dalam lomba lari kota wisata run 2023 di malang hari minggu, 19 november 2023. prajurit grup 1 kopassus dapat menorehkan prestasi puncak pada even lari kategori 10 k. sertu amat sucipto parapat mendapatkan juara 1 dengan waktu 33’33” dan amirudin mendapatkan juara 3 dengan waktu 35’20”. serang – prajurit grup 1 kopassus kembali menorehkan prestasi dalam bidang lomba lari pada ct arsa charity fun run 2023 di bsd tanggerang dan kota wisata run 2023 di malang. sedangakan sertu amat sucipto parapat mendapatkan juara 4 dengan waktu 33’51. prestasi tersebut tentunya tidak terlepas dari arahan dan program yang diberikan oleh komandan grup 1 kopassus, kolonel inf irfan amir.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tfidf_Xnew_summary</span> <span class="o">=</span> <span class="n">vectorizer_summary</span><span class="o">.</span><span class="n">transform</span><span class="p">([</span><span class="n">new_data_summary</span><span class="p">])</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">tfidf_Xnew_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 0.        , 0.17531058, ..., 0.        , 0.        ,
+        0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_gnb_summary</span> <span class="o">=</span> <span class="n">gnb_summary</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">tfidf_Xnew_summary</span><span class="p">)</span>
+<span class="n">pred_gnb_summary</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Sport&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">gnb_summary</span><span class="p">,</span> <span class="s1">&#39;modelNB.pkl&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;modelNB.pkl&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scrapingbantennews.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Scraping bantennews.com</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Febrian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

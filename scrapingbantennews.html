@@ -1,0 +1,1965 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Scraping bantennews.com &#8212; DataMining</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'scrapingbantennews';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TUGAS 4" href="berita1.html" />
+    <link rel="prev" title="TUGAS 3 CLOSENESS CENTRALITY" href="ppw.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/feb.jpeg" class="logo__image only-light" alt="DataMining - Home"/>
+    <script>document.write(`<img src="_static/feb.jpeg" class="logo__image only-dark" alt="DataMining - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    <no title>
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="CrawlingPTA.html">Crawling PTA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tugas_2.html">Import dataset</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA TOPIC MODELING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scraping bantennews.com</a></li>
+<li class="toctree-l1"><a class="reference internal" href="berita1.html">TUGAS 4</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/Feb11F/datamining.git/blob/gh-pages/_sources/scrapingbantennews.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Feb11F/datamining.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Feb11F/datamining.git/issues/new?title=Issue%20on%20page%20%2Fscrapingbantennews.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/scrapingbantennews.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Scraping bantennews.com</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping">Scraping</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="scraping-bantennews-com">
+<h1>Scraping <a class="reference external" href="http://bantennews.com">bantennews.com</a><a class="headerlink" href="#scraping-bantennews-com" title="Permalink to this heading">#</a></h1>
+<section id="import-library">
+<h2>Import Library<a class="headerlink" href="#import-library" title="Permalink to this heading">#</a></h2>
+<p><strong>requests</strong> : digunakan untuk membuat permintaan HTTP ke situs web</p>
+<p><strong>BeautifulSoup</strong> : digunakan untuk mengurai konten HTML</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="scraping">
+<h2>Scraping<a class="headerlink" href="#scraping" title="Permalink to this heading">#</a></h2>
+<p>Fungsi ini melakukan iterasi melalui setiap halaman berita dalam rentang yang ditentukan oleh hal.
+Pada setiap halaman, fungsi mengambil konten HTML menggunakan requests.get() dari tautan yang dibentuk berdasarkan nomor halaman.
+Jika respons dari permintaan adalah 200 (artinya halaman berhasil dimuat), konten halaman di-parse menggunakan BeautifulSoup untuk ekstraksi informasi.
+Fungsi mencari blok konten berita dengan class widget berita-list.
+Di dalam blok konten tersebut, ia mencari semua elemen berita dengan class berita.
+Untuk setiap artikel berita, fungsi mengekstrak judul dari elemen h3 dan tautan dari elemen a di dalamnya.
+Selanjutnya, fungsi melakukan permintaan HTTP GET ke tautan artikel untuk mengambil konten dari setiap artikel secara individu.
+Jika konten artikel berhasil diambil (status respons 200), fungsi mengekstrak konten dari elemen dengan class entry-content dan mengumpulkannya.
+Setelah mengumpulkan judul, konten, dan kategori dari setiap artikel, informasi tersebut dimasukkan ke dalam list data.
+Akhirnya, fungsi mengembalikan list data yang berisi informasi yang telah berhasil di-scrape dari halaman-halaman berita.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">scrap_beritajatim</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">hal</span><span class="p">,</span> <span class="n">kategori</span><span class="p">):</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">kategori</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">base_url</span> <span class="o">=</span> <span class="n">link</span>
+    <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">hal</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s1">page/</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s1">/&#39;</span>
+        <span class="c1"># print(f&quot;Scraping page: {url}&quot;)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            <span class="n">blok</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;td-ss-main-content&#39;</span><span class="p">)</span>
+            <span class="n">articles</span> <span class="o">=</span> <span class="n">blok</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;td-block-span6&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+                <span class="n">link</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+                <span class="c1"># print(f&quot;link: {link}&quot;)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">article</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+            <span class="n">content_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">content_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+                <span class="n">content_soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">content_response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+                <span class="n">article_content</span> <span class="o">=</span> <span class="n">content_soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="n">class_</span><span class="o">=</span><span class="s1">&#39;td-ss-main-content&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">article_content</span><span class="p">:</span>
+                    <span class="n">content_text</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+                    <span class="k">for</span> <span class="n">paragraph</span> <span class="ow">in</span> <span class="n">article_content</span><span class="o">.</span><span class="n">find_all</span><span class="p">([</span><span class="s1">&#39;p&#39;</span><span class="p">]):</span>
+                        <span class="n">content_text</span> <span class="o">+=</span> <span class="n">paragraph</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;ADVERTISEMENT&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;SCROLL TO RESUME CONTENT&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+                    <span class="c1"># print(content_text)</span>
+                    <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">title</span><span class="p">,</span><span class="n">content_text</span><span class="p">,</span><span class="n">category</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Scraping dilakukan perkategori
+Hasil scraping perkategori kemudian dirubah menjadi dataframe dan digabungkan.
+Data hasil penggabungan kemudian dilakukan random agar datanya tidak tersusun urut berdasarkan jenis kategori.
+Kemudian data disimpan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pendidikan</span> <span class="o">=</span> <span class="n">scrap_beritajatim</span><span class="p">(</span><span class="s1">&#39;https://www.bantennews.co.id/category/hukum/&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;hukum&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kepala Toko Bobol Alfamart Gunakan Uang untuk Hiburan Malam
+Kepala Toko Alfamart di Kragilan Bobol Toko
+Diduga Curi Mesin Pemotong Kayu, Pria di Lebak Ditangkap Warga
+Warga Lebak Geruduk Sekolah Lantaran Ijazah Diduga Palsu
+Habiskan Dana Desa untuk Karaoke, Kades Lontar Minta Dihukum Ringan
+Kasus Kecelakaan Xpander yang Tabrak 3 Pemotor di Serang Berujung Damai
+Firli Bahuri Ogah Mundur Meski Terjerat Dugaan Kasus Pemerasan
+Sopir Xpander yang Tabrak 3 Motor di Kota Serang Diamankan Polisi
+Inilah Motif Pelaku Penyerangan Siswa SMP Negeri di Lebak
+Vonis Mantan Kabid Dinsos Terdakwa Korupsi Dana Bencana Diperberat Hakim
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Masyarakat Tirtayasa Minta Penyidikan Kasus Pidana di Polsek Diberlakukan Kembali
+Satreskrim Polres Pandeglang Bekuk 5 Tersangka Curanmor
+Polisi Tangkap 3 Pelaku Pembacokan Siswa SMP di Lebak
+Peras Pengusaha, Kades di Lebak Jadi Tersangka
+Diduga Cabuli Bocah, Warga Cibeber Dilaporkan ke Polisi
+Modus Ajarkan Perkalian, Kepala Sekolah di Serang Cabuli Siswinya
+Cabuli 7 Murid, Kepala SD di Carenang Serang Ditangkap Polisi
+Kasus Situ Ranca Gede Jakung Kabupaten Serang Beralih Jadi Pabrik Naik...
+BNN Banten Musnahkan Sabu Seberat 1,2 Kg
+107 Anggota Jaringan JI dan JAD Asal Banten Lepas Baiat
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Penyidik Limpahkan Kasus Pasutri Bobol Bank BRI ke JPU Pekan Depan
+Korupsi Pasar Grogol, Kejari Cilegon Masih Tunggu Putusan PT Banten
+Duit Korupsi Sodetan Cibinuangeun Dikembalikan ke Negara Sebesar Rp3,8 Miliar
+Ketua KPK Firli Bahuri Kembali Mangkir Pemeriksaan Dugaan Kasus Pemerasan
+Terkait Kasasi, Ini Tanggapan Kuasa Hukum Sarudin
+Mantan Kepala BPKAD Serang Divonis Bebas
+Polisi Terus Garap Kasus Kredit Fiktif di Bank BJB Cabang Labuan
+Miris! Barang di Kios Pasar KPW Banten Lama Hilang Dicuri
+Sempat Tertunda, Firli Bahuri Kembali Bakal Diperiksa Terkait Dugaan Kasus Pemerasan...
+Korupsi Rp988 Juta, Mantan Kades Lontar Dituntut 6 Tahun Bui
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pelajar di Lebak Diduga Jadi Korban Pembacokan
+Bapak dan Anak Kompak Curi Motor, Sudah Operasi di 40 Titik
+Rumah di Taman Mutiara Indah Dibobol Maling, Kerugian Puluhan Juta
+Tewaskan Bocah, Teknisi Pasar Malam di Serang Ditetapkan Tersangka
+KPK Tetapkan Wamenkumham Eddy Hiariej Menjadi Tersangka Kasus Suap
+Dua Perwira Polres Pandeglang Diganti
+Ini Modus Mantan Guru Olahraga di Carenang Cabuli Adik Ipar
+Sertijab Kapolsek dan Kasatresnarkoba, Kapolres Serang Beri Pesan Ini
+Anggota DPRD Banten Diduga Aniaya Warga
+Usai Video Mesum Viral, Mantan Guru di Carenang Menyerahkan Diri ke...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cabuli Bocah, Pria Paruh Baya di Cilegon Diringkus Polisi
+Mahasiswi Keberatan Tarif Parkir Stadion Maulana Yusuf Kembali Berlaku
+Korupsi untuk Sawer Biduan, Kades Lontar Minta Bantuan Orangtua Ganti Dana...
+Mantan Kepala BPKAD Serang Kembali Tegaskan Tidak Terima Gratifikasi
+Diduga Edarkan Uang Palsu, Dua Pemuda Lebak Diamankan Polisi
+Kejati Banten Akan Periksa 21 Nasabah dalam Perkara Pasutri Bobol Bank...
+7 Caleg Bekas Napi Berebut Kursi DPRD Banten
+4 Bekas Napi Korupsi Mencalonkan Diri di Pileg DPRD Banten Tahun...
+Bocah Perempuan di Lebak Tewas Terjatuh di Jembatan Gantung
+Korupsi Rp 40 Miliar, Anggota Badan Pemeriksa Keuangan Achsanul Qosasi Ditahan
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kepercayaan Publik ke MK Dikhawatirkan Runtuh, Bisa Picu Konflik Pemilu 2024
+Kapolres Jenguk Korban Penembakan Komplotan Rampok di Ciruas
+Dihukum Mati, 8 WNA Iran Penyelundup Narkoba Ajukan Banding
+Video Asusila Mantan Guru dan Pelajar di Carenang Viral, Keluarga Lapor...
+Warga Ciruas yang Tertembak Rampok Dirawat di RS Hermina
+Selain dengan Siswi, Guru Olahraga di Serang Juga Rekam Adegan Mesum...
+Polisi Tangkap Buron Pembobol Rumah Warga di Serang
+Akses Jalan Hutan Kota Serang Rawan Jambret
+Bawaslu Kabupaten Serang Larang Keras Masa Reses Jadi Ajang Kampanye
+Pengidap HIV Cabuli Bocah Anak Tetangga di Pandeglang
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kasus Penyalahgunaan Narkoba di Pandeglang Mengkhawatirkan
+Disebut Biayai Sewa Rumah Firli Bahuri Rp 650 Juta, Bos Alexis...
+Polisi Tangkap Pacar Pelaku Pembuang Bayi di Cimanuk Pandeglang
+Bawa Sajam, Polisi Tetapkan 2 Tersangka Pemuda  yang Hendak Tawuran...
+Jaksa Tolak Pledoi Mantan Kepala BPKAD Kabupaten Serang
+Soal Kasus Pencurian 6 Traktor Warga, Polisi : Masih Tahap Penyelidikan
+Warga Bojong Pertanyakan Perkembangan Kasus Pencurian 6 Mesin Traktor ke Polisi
+Guru Olahraga di Carenang Serang Rekam Video Mesum dengan Sang Siswi
+2 Orang Pekerja di Galian Tanah Cibadak Tewas, Polres Lebak Tetapkan...
+Kades Lontar Akui Pakai Duit Desa untuk Hiburan Malam Tiap Hari
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Terdakwa Korupsi Pembangunan JLS Cilegon Divonis 7 Tahun Bui
+Bacakan Pledoi, Mantan Kepala BPKAD Serang Minta Bebas
+Pesta Sabu, Tiga Panwascam di Lebak Ditangkap Polisi
+TKP Rusak Dibakar Warga, Polresta Serang Amankan 3 Orang Pengelola
+Dugaan Kecurangan Wasit, Serang Jaya Bakal Lapor ke Polda Banten
+Kejati Bakal Ungkap Rekening Penampung Kejahatan Pasutri Pembobol Bank BRI
+Pemuda di Serang Nekat Perkosa Tetangga
+Kasus Dugaan Kekerasan Seksual Oleh Kepsek di Carenang, Polisi : Tunggu...
+Ini Detik-detik Bocah Kesetrum Wahana di Korsel Pasar Malam
+Polisi Tahan Pengelola Korsel yang Tewaskan Bocah di Kabupaten Serang
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 Pelaku Pengeroyokan di Alun-Alun Serang Diringkus Polisi
+KTP Siapa yang Digunakan Pasutri untuk Bobol Duit Rp5,1 M di...
+Let’s Go Cinepolis, Program CSR Cinepolis untuk Indonesia
+Kepala Kejati Banten Lantik 6 Pejabat Eselon II dan III
+Belasan Guru Besar Desak Anwar Usman Dipecat dari Hakim MK
+8 WNA Iran Penyelundup 319 Kg Sabu Divonis Mati
+Pasutri Pembobol Bank BRI Tangsel Diduga Teman Terpidana Kasus Serupa
+21 KK Terdampak Gusuran Tol Serang-Panimbang Harus Kembalikan Uang Rp4,6 Miliar...
+Hilang Digondol Maling, Polsek Carenang Serahkan Sepeda Motor Kepada Pemiliknya
+Dua Warga Lebak Tewas Tertimbun Galian Tanah
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-41f358ee5847&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pendidikan</span> <span class="o">=</span> <span class="n">scrap_beritajatim</span><span class="p">(</span><span class="s1">&#39;https://www.bantennews.co.id/category/hukum/&#39;</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;hukum&#39;</span><span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-2-cdb06778c1ed&gt;</span> in <span class="ni">scrap_beritajatim</span><span class="nt">(link, hal, kategori)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>         <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">base_url</span><span class="si">}</span><span class="s1">page/</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s1">/&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="c1"># print(f&quot;Scraping page: {url}&quot;)</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>         <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span>             <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span><span class="sd"> </span>
+<span class="ne">---&gt; </span><span class="mi">73</span><span class="sd">     return request(&quot;get&quot;, url, params=params, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="sd"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/api.py</span> in <span class="ni">request</span><span class="nt">(method, url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span><span class="sd">     # cases, and look like a memory leak in others.</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="sd">     with sessions.Session() as session:</span>
+<span class="ne">---&gt; </span><span class="mi">59</span><span class="sd">         return session.request(method=method, url=url, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">60</span><span class="sd"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="sd"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">request</span><span class="nt">(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span><span class="sd">         }</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span><span class="sd">         send_kwargs.update(settings)</span>
+<span class="ne">--&gt; </span><span class="mi">589</span><span class="sd">         resp = self.send(prep, **send_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span><span class="sd">         return resp</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/sessions.py</span> in <span class="ni">send</span><span class="nt">(self, request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">701</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">702</span><span class="sd">         # Send the request</span>
+<span class="ne">--&gt; </span><span class="mi">703</span><span class="sd">         r = adapter.send(request, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">704</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">705</span><span class="sd">         # Total elapsed time of the request (approximately)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/requests/adapters.py</span> in <span class="ni">send</span><span class="nt">(self, request, stream, timeout, verify, cert, proxies)</span>
+<span class="g g-Whitespace">    </span><span class="mi">484</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span><span class="sd">         try:</span>
+<span class="ne">--&gt; </span><span class="mi">486</span><span class="sd">             resp = conn.urlopen(</span>
+<span class="g g-Whitespace">    </span><span class="mi">487</span><span class="sd">                 method=request.method,</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span><span class="sd">                 url=url,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">urlopen</span><span class="nt">(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, preload_content, decode_content, **response_kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">789</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">790</span><span class="sd">             # Make the request on the HTTPConnection object</span>
+<span class="ne">--&gt; </span><span class="mi">791</span><span class="sd">             response = self._make_request(</span>
+<span class="g g-Whitespace">    </span><span class="mi">792</span><span class="sd">                 conn,</span>
+<span class="g g-Whitespace">    </span><span class="mi">793</span><span class="sd">                 method,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_make_request</span><span class="nt">(self, conn, method, url, body, headers, retries, timeout, chunked, response_conn, preload_content, decode_content, enforce_content_length)</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span><span class="sd">             # Trigger any extra validation we need to do.</span>
+<span class="g g-Whitespace">    </span><span class="mi">467</span><span class="sd">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">468</span><span class="sd">                 self._validate_conn(conn)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span><span class="sd">             except (SocketTimeout, BaseSSLError) as e:</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span><span class="sd">                 self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connectionpool.py</span> in <span class="ni">_validate_conn</span><span class="nt">(self, conn)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1095</span><span class="sd">         # Force connect early to allow us to validate the connection.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1096</span><span class="sd">         if conn.is_closed:</span>
+<span class="ne">-&gt; </span><span class="mi">1097</span><span class="sd">             conn.connect()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1098</span><span class="sd"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1099</span><span class="sd">         if not conn.is_verified:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">connect</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">609</span><span class="sd">     def connect(self) -&gt; None:</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span><span class="sd">         sock: socket.socket | ssl.SSLSocket</span>
+<span class="ne">--&gt; </span><span class="mi">611</span><span class="sd">         self.sock = sock = self._new_conn()</span>
+<span class="g g-Whitespace">    </span><span class="mi">612</span><span class="sd">         server_hostname: str = self.host</span>
+<span class="g g-Whitespace">    </span><span class="mi">613</span><span class="sd">         tls_in_tls = False</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/connection.py</span> in <span class="ni">_new_conn</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span><span class="sd">         &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">202</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">203</span>             <span class="n">sock</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">create_connection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>                 <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dns_host</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">205</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/urllib3/util/connection.py</span> in <span class="ni">create_connection</span><span class="nt">(address, timeout, source_address, socket_options)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="k">raise</span> <span class="n">LocationParseError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">&#39;, label empty or too long&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span> 
+<span class="ne">---&gt; </span><span class="mi">60</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="n">sock</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">/usr/lib/python3.10/socket.py</span> in <span class="ni">getaddrinfo</span><span class="nt">(host, port, family, type, proto, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">953</span>     <span class="c1"># and socket type values to enum constants.</span>
+<span class="g g-Whitespace">    </span><span class="mi">954</span>     <span class="n">addrlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">--&gt; </span><span class="mi">955</span>     <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">_socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">,</span> <span class="n">family</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">flags</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">956</span>         <span class="n">af</span><span class="p">,</span> <span class="n">socktype</span><span class="p">,</span> <span class="n">proto</span><span class="p">,</span> <span class="n">canonname</span><span class="p">,</span> <span class="n">sa</span> <span class="o">=</span> <span class="n">res</span>
+<span class="g g-Whitespace">    </span><span class="mi">957</span>         <span class="n">addrlist</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">_intenum_converter</span><span class="p">(</span><span class="n">af</span><span class="p">,</span> <span class="n">AddressFamily</span><span class="p">),</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sport</span> <span class="o">=</span> <span class="n">scrap_beritajatim</span><span class="p">(</span><span class="s1">&#39;https://www.bantennews.co.id/category/olahraga/&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;Sport&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pelari Grup 1 Kopassus Kembali Ukir Prestasi
+Kejuaraan Karate Kabupaten Tangerang Diharapkan Lahirkan Atlet Dunia
+Posisi Timnas Indonesia di Ranking FIFA Usai Kalah Lawan Irak 1-5
+Hasil Kualifikasi Piala Dunia 2026: Timnas Indonesia Dibantai Irak Lima Gol
+Prediksi Maroko vs Timnas Indonesia di Piala Dunia U-17 2023
+Berlaga Diajang Soeratin 2023, Ini Target Kontingen Kota Tangerang
+Prediksi Irak vs Timnas Indonesia Kualifikasi Piala Dunia Malam Ini
+Hitung-hitungan Timnas Indonesia Lolos ke 16 Besar Piala Dunia U-17 2023...
+Rumput Stadion Rusak, Pertandingan Perserang vs Malut United Ditunda
+Hadapi Panama, Pelatih Minta Pemain Timnas Indonesia U-17 Kompak
+Laga Timnas Indonesia U-17 vs Ekuador, Arkhan Kaka Dinobatkan FIFA Jadi...
+Hasil Piala Dunia U-17, Timnas Indonesia Tahan Imbang Ekuador di Laga...
+Kembangkan Cabor Renang, Dispora Kota Tangerang Gelar Pelatihan Wasit
+Dindik Kota Tangerang Gelar Lomba Voli antar Guru
+FIFA Puas dengan Persiapan Indonesia untuk Piala Dunia U-17 2023
+Megawati Raih Gelar Pemain Terbaik Putaran Pertama Liga Voli Korea Selatan
+Ratusan Pesilat Unjuk Kebolehan di Kejuaraan IPSI Cup Pandeglang
+Bangun Regenerasi dan Jaring Atlet Muda Berbakat
+Ini Skuad Timnas Indonesia untuk Kualifikasi Piala Dunia 2026
+Arab Saudi Jadi Tuan Rumah Piala Dunia 2034 Setelah Australia Mundur
+Ini Target Timnas Indonesia di Piala Dunia U-17 2023
+Terapkan Gaya Hidup Sehat, Dispora Kota Tangerang Gelar Aeroboxing Class
+Pebasket Indonesia Marques Bolden akan Bermain untuk Tim NBA Milwaukee Bucks
+Begini Cara Pembelian Tiket Piala Dunia U-17 2023
+Jadwal BRI Liga 1 Padat, Timnas Indonesia Skip Latihan di Tanah...
+Ranking FIFA Timnas Indonesia Naik Usai 2 Kali Kalahkan Brunei
+Indonesia Batal Maju Calonkan Diri Sebagai Tuan Rumah Piala Dunia 2034,...
+Jalan Panjang dan Terjal Timnas Indonesia Menuju Piala Dunia 2026
+Marc Marquez Memotivasi Pembalap Muda Indonesia
+22 Club Bersaing Kerjurda Bola Voli Provinsi Banten
+Pebalap MotoGP Akui Kualitas Sirkuit Mandalika Saat Ini Lebih Baik
+Gawang Putra Tangerang Dibombardir Serang Jaya
+Persikota Tangerang Menang di Laga Pertama Liga 3 Banten
+Persikab Tekuk Perserang di Pegadaian Liga 2
+Penerima Penghargaan dari Pemprov Kritik Hanya Diberi Sertifikat
+Hasil Asian Games 2022 Jadi Evaluasi Menuju Olimpiade Paris
+Persikota Siap Hadapi Kompetisi Liga 3
+Indonesia Rebut Medali Emas Perahu Naga 1000m Putra Asian Games 2022
+Pertina Kota Tangerang Sosialisasikan Olahraga Tinju ke Sekolah
+Grand Final AXIS Nation Cup 2023, 10 Tim Futsal SMA/SMK Terbaik...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">politik</span> <span class="o">=</span> <span class="n">scrap_beritajatim</span><span class="p">(</span><span class="s1">&#39;https://www.bantennews.co.id/category/politik/&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;Politik&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resmi! DPP Golkar Tunjuk Isro Mi’raj Jadi Bakal Calon Walikota Cilegon...
+Bawaslu Pandeglang Garap Dugaan Pelanggaran Netralitas ASN
+Wapres Minta Kepala Daerah Netral Saat Pemilu 2024, Helldy Malah Nampang...
+Relawan Ganjar Untuk Semua Dirikan Tempat Pemandian Umum di Lebak
+Pimpinan Partai Kota Serang Bersatu untuk Menangkan Prabowo-Gibran dalam Pilpres 2024
+Apa yang Dipikirkan Tiga Cawapres Sebelum Tidur?
+Tim Pemanangan Ganjar-Mahfud di Banten Dibentuk
+Tak Ada Wajah Jokowi Di Baliho Ganjar-Mahfud, Begini Kata PDIP
+Prabowo Tak Malu Akui Sangat Sayang Dengan Jokowi
+Relawan Ganjar Mahfud Gelar Pengukuhan Gapura Nusantara Banten
+Bawaslu Kota Serang Gencar Tertibkan APK Sebelum Kampanye
+KPU Pesan 1,2 Miliar Surat Suara untuk Pemilu 2024
+Manuver Klan Jokowi Bakal Goyang PDIP di Kandang Banteng?
+Beredar Dokumen ‘Pakta Integritas’ Kepala Daerah Menangkan Ganjar, Data Intelijen Bisa...
+KPU Pandeglang Mulai Terima Logistik Pemilu 2024
+2 Putra Jokowi Bertemu Megawati di KPU, Gibran Salim, Kaesang Sungkem
+Tiga Pasangan Capres-Cawapres 2024 Dapat Nomor Urut
+Bawaslu Pandeglang Sebut Ini Potensi Sengketa Antar Peserta Pemilu
+KPU Kota Serang Terima Logistik Pemilu 2024
+Yudi Budi Wibowo Serap Aspirasi Masyarakat Tangerang Selatan
+Eks Kepala Basarnas Rasmi jadi Kapten Timnas Pemenangan Anies – Cak...
+KPU Lebak Terima Ribuan Botol Tinta Pemilu 2024
+Usai Ditetapkan Jadi Peserta Pilpres 2024, 3 Pasang Capres-Cawapres Akan Undi...
+KPU Tetapkan Tiga Pasangan Capres-Cawapres Penuhi Syarat Jadi Peserta Pilpres 2024
+Pojok JDIH di Kantor Bawaslu Lebak Mengusung Keaarifan Lokal
+Hari Ini, KPU Tetapkan Bakal Pasangan Capres Cawapres
+Begini Respons TKN Prabowo-Gibran Soal Anggapan Ada Manipulasi Hukum Dan Nepotisme...
+Survei Indikator Politik Sebut Efek Gibran Bikin Basis Ganjar Beralih Dukung...
+Pemilu 2024 di Kota Tangerang Diharapkan Damai
+Dorong Pemilu Damai, Polres Serang Gandeng Ulama
+PKB Berharap Polisi Netral dalam Pemasangan Baliho Capres-Cawapres
+Gibran Yakin Menang Pilpres Satu Putaran
+Pengumuman Struktur Timnas Pemenangan AMIN Tinggal Menunggu Restu Anies
+Jaga Netralitas ASN, Bawaslu Banten Intip Aktivitas Pejabat Negara
+Survei Poltracking: Ada Potensi Pilpres Satu Putaran Dimenangkan Prabowo – Gibran
+Bawaslu Kabupaten Serang Temukan 317 Pemilih Baru
+Klaim Ada Bukti, Jubir AMIN Anggap Jokowi jadi Sutradara di Balik...
+Keterwakilan Perempuan di DCT Pileg KPU Pandeglang Diduga Kurang dari 30...
+KPU dan Bawaslu Dapat Hibah Rp608 Miliar, Digunakan untuk Apa?
+Sudah Final dan Mengikat, Aturan Main Pilpres 2024 Tak Bisa Diubah...
+Pengamat Sebut PDIP Tak Berani Pecat Gibran
+KPU Banten Ajukan Approval Finalisasi Surat Suara ke KPU RI
+Jokowi Singgung Situasi Politik Saat Ini: Terlalu Banyak Drama Gegara Pertarungan...
+Jusuf Kalla Janji Netral di Pilpres 2024, Pilih yang Terbaik Buat...
+Pemilu 2024 di Kabupaten Tangerang Diharapkan Aman, Lancar dan Damai
+PDIP Klaim Tetap Sayang Jokowi, Tapi…
+Partisipasi Pemilih Pemilu 2024 di Kabupaten Tangerang Diharapkan Capai 85 Persen
+KPU Banten Minta Peserta Pemilu Tak Kampanye di Luar Jadwal
+Tak Ada Perubahan, Sistem Debat Capres 2024 Masih Seperti Pilpres 2019
+1.333 Caleg DPRD Banten Resmi Masuk DCT Pemilu 2024
+6.333 Atribut Kampanye di Kabupaten Serang Dibongkar
+Survei SMRC Soal Cawapres: Gibran Paling Tenar, Mahfud MD Disukai, Cak...
+Bima Sakti Beberkan Perkembangan Timnas Indonesia U-17
+Tanggapi PDIP yang Sedih Ditinggal Gibran, Prabowo: Saya Banyak Ditinggal Kader,...
+Anies Sebut Nama Kapten Timnas AMIN Tinggal Pengumuman Saja
+Jokowi Berharap 3 Bacapres Adu Gagasan di Pemilu 2024
+‘Rungkad’ Meriahkan Kirab Pemilu di Kota Serang
+Jejak Panas Dingin Hubungan Gus Dur dan Megawati
+PDIP Sedih, Berikan Privilese ke Jokowi dan Keluarga, Namun Sekarang Ditinggalkan
+Gibran Rakabuming Siap Hadapi Mahfud MD dan Cak Imin Saat Debat...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hasil1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pendidikan</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">])</span>
+<span class="n">hasil2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">politik</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">])</span>
+<span class="n">hasil3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sport</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Judul&#39;</span><span class="p">,</span> <span class="s1">&#39;Isi&#39;</span><span class="p">,</span> <span class="s1">&#39;Kategori&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">combined_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">hasil1</span><span class="p">,</span><span class="n">hasil2</span><span class="p">,</span><span class="n">hasil3</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">combined_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-f77ac8fa-01ff-46b4-9e67-8772e407e80f" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Isi</th>
+      <th>Kategori</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Vonis Mantan Kabid Dinsos Terdakwa Korupsi Dan...</td>
+      <td>SERANG– Mantan Kepala Bidang Perlindungan, Jam...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>107 Anggota Jaringan JI dan JAD Asal Banten Le...</td>
+      <td>SERANG– Sebanyak 107 orang mantan anggota Jema...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Korupsi Rp988 Juta, Mantan Kades Lontar Ditunt...</td>
+      <td>SERANG– Mantan Kepala Desa Lontar, Kecamatan T...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Usai Video Mesum Viral, Mantan Guru di Carenan...</td>
+      <td>KAB. SERANG– Usai kasusnya viral, seorang mant...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Korupsi Rp 40 Miliar, Anggota Badan Pemeriksa ...</td>
+      <td>JAKARTA– Anggota III Badan Pemeriksa Keuangan ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Pengidap HIV Cabuli Bocah Anak Tetangga di Pan...</td>
+      <td>PANDEGLANG– Satuan Reserse Kriminal (Satreskri...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kades Lontar Akui Pakai Duit Desa untuk Hibura...</td>
+      <td>SERANG– Sidang kasus korupsi dana Desa Lontar ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Polisi Tahan Pengelola Korsel yang Tewaskan Bo...</td>
+      <td>SERANG– Pengelola korsel di Kampung Cileuweung...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Dua Warga Lebak Tewas Tertimbun Galian Tanah</td>
+      <td>LEBAK– Diki (19) warga Kecamatan Sajira dan Ad...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Rambu Lalu Lintas di Jalan Tol Dicuri, Pengelo...</td>
+      <td>KAB. SERANG– Sejumlah rambu lalu lintas di Tol...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Relawan Ganjar Mahfud Gelar Pengukuhan Gapura ...</td>
+      <td>LEBAK –Relawan Ganjar Pranowo dan Mahfud MD me...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Yudi Budi Wibowo Serap Aspirasi Masyarakat Tan...</td>
+      <td>TANGSEL– Anggota DPRD Provinsi Banten, Yudi Bu...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Dorong Pemilu Damai, Polres Serang Gandeng Ulama</td>
+      <td>KAB. SERANG– Dalam rangka menciptakan Pemilu 2...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Sudah Final dan Mengikat, Aturan Main Pilpres ...</td>
+      <td>SERANG– Ketua Majelis Kehormatan Mahkamah Kons...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1.333 Caleg DPRD Banten Resmi Masuk DCT Pemilu...</td>
+      <td>SERANG– Sebanyak 1.333 calon anggota legislati...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Gibran Rakabuming Siap Hadapi Mahfud MD dan Ca...</td>
+      <td>SERANG– Calon wakil Presiden (Cawapres), Gibra...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hadapi Panama, Pelatih Minta Pemain Timnas Ind...</td>
+      <td>JAKARTA– Pemain Timnas Indonesia U-17 Welber J...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Arab Saudi Jadi Tuan Rumah Piala Dunia 2034 Se...</td>
+      <td>JAKARTA– Arab Saudi akan menjadi tuan rumah Pi...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>22 Club Bersaing Kerjurda Bola Voli Provinsi B...</td>
+      <td>TANGERANG– Kota Tangerang dipercaya menjadi tu...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Grand Final AXIS Nation Cup 2023, 10 Tim Futsa...</td>
+      <td>SERANG–  Turnamen futsal terbesar antar-SMA se...</td>
+      <td>Sport</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-f77ac8fa-01ff-46b4-9e67-8772e407e80f')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-f77ac8fa-01ff-46b4-9e67-8772e407e80f button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-f77ac8fa-01ff-46b4-9e67-8772e407e80f');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-4b03187d-b448-4301-873f-81b08a8f8693">
+  <button class="colab-df-quickchart" onclick="quickchart('df-4b03187d-b448-4301-873f-81b08a8f8693')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-4b03187d-b448-4301-873f-81b08a8f8693 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mounted at /content/drive
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">combined_df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;beritabantn.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-85ff45ce-7991-44f7-ae56-633e4427539b" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Isi</th>
+      <th>Kategori</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Rambu Lalu Lintas di Jalan Tol Dicuri, Pengelo...</td>
+      <td>KAB. SERANG– Sejumlah rambu lalu lintas di Tol...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Arab Saudi Jadi Tuan Rumah Piala Dunia 2034 Se...</td>
+      <td>JAKARTA– Arab Saudi akan menjadi tuan rumah Pi...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>107 Anggota Jaringan JI dan JAD Asal Banten Le...</td>
+      <td>SERANG– Sebanyak 107 orang mantan anggota Jema...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Relawan Ganjar Mahfud Gelar Pengukuhan Gapura ...</td>
+      <td>LEBAK –Relawan Ganjar Pranowo dan Mahfud MD me...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dua Warga Lebak Tewas Tertimbun Galian Tanah</td>
+      <td>LEBAK– Diki (19) warga Kecamatan Sajira dan Ad...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Gibran Rakabuming Siap Hadapi Mahfud MD dan Ca...</td>
+      <td>SERANG– Calon wakil Presiden (Cawapres), Gibra...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.333 Caleg DPRD Banten Resmi Masuk DCT Pemilu...</td>
+      <td>SERANG– Sebanyak 1.333 calon anggota legislati...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Kades Lontar Akui Pakai Duit Desa untuk Hibura...</td>
+      <td>SERANG– Sidang kasus korupsi dana Desa Lontar ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Polisi Tahan Pengelola Korsel yang Tewaskan Bo...</td>
+      <td>SERANG– Pengelola korsel di Kampung Cileuweung...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Usai Video Mesum Viral, Mantan Guru di Carenan...</td>
+      <td>KAB. SERANG– Usai kasusnya viral, seorang mant...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Grand Final AXIS Nation Cup 2023, 10 Tim Futsa...</td>
+      <td>SERANG–  Turnamen futsal terbesar antar-SMA se...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Pengidap HIV Cabuli Bocah Anak Tetangga di Pan...</td>
+      <td>PANDEGLANG– Satuan Reserse Kriminal (Satreskri...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Yudi Budi Wibowo Serap Aspirasi Masyarakat Tan...</td>
+      <td>TANGSEL– Anggota DPRD Provinsi Banten, Yudi Bu...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>22 Club Bersaing Kerjurda Bola Voli Provinsi B...</td>
+      <td>TANGERANG– Kota Tangerang dipercaya menjadi tu...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sudah Final dan Mengikat, Aturan Main Pilpres ...</td>
+      <td>SERANG– Ketua Majelis Kehormatan Mahkamah Kons...</td>
+      <td>Politik</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Korupsi Rp988 Juta, Mantan Kades Lontar Ditunt...</td>
+      <td>SERANG– Mantan Kepala Desa Lontar, Kecamatan T...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Hadapi Panama, Pelatih Minta Pemain Timnas Ind...</td>
+      <td>JAKARTA– Pemain Timnas Indonesia U-17 Welber J...</td>
+      <td>Sport</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Korupsi Rp 40 Miliar, Anggota Badan Pemeriksa ...</td>
+      <td>JAKARTA– Anggota III Badan Pemeriksa Keuangan ...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Vonis Mantan Kabid Dinsos Terdakwa Korupsi Dan...</td>
+      <td>SERANG– Mantan Kepala Bidang Perlindungan, Jam...</td>
+      <td>hukum</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Dorong Pemilu Damai, Polres Serang Gandeng Ulama</td>
+      <td>KAB. SERANG– Dalam rangka menciptakan Pemilu 2...</td>
+      <td>Politik</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-85ff45ce-7991-44f7-ae56-633e4427539b')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-85ff45ce-7991-44f7-ae56-633e4427539b button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-85ff45ce-7991-44f7-ae56-633e4427539b');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-082f52e2-4292-4a62-b6d0-b4d9b1df2b8d">
+  <button class="colab-df-quickchart" onclick="quickchart('df-082f52e2-4292-4a62-b6d0-b4d9b1df2b8d')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-082f52e2-4292-4a62-b6d0-b4d9b1df2b8d button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Kategori&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+  <div id="df-1ec00a19-738a-4916-8183-f259d0754d61" class="colab-df-container">
+    <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>col_0</th>
+      <th>count</th>
+    </tr>
+    <tr>
+      <th>Kategori</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Politik</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>Sport</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>hukum</th>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-1ec00a19-738a-4916-8183-f259d0754d61')"
+            title="Convert this dataframe to an interactive table."
+            style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-1ec00a19-738a-4916-8183-f259d0754d61 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-1ec00a19-738a-4916-8183-f259d0754d61');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-a3cf1299-8455-46b6-8e07-f1b7abaa8053">
+  <button class="colab-df-quickchart" onclick="quickchart('df-a3cf1299-8455-46b6-8e07-f1b7abaa8053')"
+            title="Suggest charts"
+            style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+     width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-a3cf1299-8455-46b6-8e07-f1b7abaa8053 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ppw.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TUGAS 3 CLOSENESS CENTRALITY</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="berita1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TUGAS 4</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scraping">Scraping</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Febrian
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
