@@ -30,6 +30,6 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-pendidikan = scrap_beritajatim('https://www.bantennews.co.id/category/hukum/',10,'hukum')
+pendidikan = scrap_beritajatim('https://www.bantennews.co.id/category/hukum/',200,'hukum')
 -------------------
 
