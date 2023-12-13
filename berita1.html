@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)" href="uas.html" />
-    <link rel="prev" title="Scraping bantennews.com" href="scrapingbanten.html" />
+    <link rel="prev" title="EKSTRAKSI KATA KUNCI" href="ekstraksi_kataa.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA TOPIC MODELING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapingbanten.html">Scraping bantennews.com</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ekstraksi_kataa.html">EKSTRAKSI KATA KUNCI</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uas.html"><strong>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)</strong></a></li>
 </ul>
@@ -452,7 +453,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f28cbf74-fd31-4257-896d-839c7f1a69e3" class="colab-df-container">
+  <div id="df-d1f3af20-b304-4890-81d7-dff1270facb9" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -562,7 +563,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-f28cbf74-fd31-4257-896d-839c7f1a69e3')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d1f3af20-b304-4890-81d7-dff1270facb9')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -614,12 +615,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-f28cbf74-fd31-4257-896d-839c7f1a69e3 button.colab-df-convert');
+        document.querySelector('#df-d1f3af20-b304-4890-81d7-dff1270facb9 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-f28cbf74-fd31-4257-896d-839c7f1a69e3');
+        const element = document.querySelector('#df-d1f3af20-b304-4890-81d7-dff1270facb9');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -797,7 +798,7 @@ Name: Tokenizing, Length: 1200, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6ddaa47f7e4094b1fbdfe2058c84d02683a9373d9be2d3a25bbcb0e470a7269b.png" src="_images/6ddaa47f7e4094b1fbdfe2058c84d02683a9373d9be2d3a25bbcb0e470a7269b.png" />
+<img alt="_images/7ddf7a8c21e2cb98de034baac2cf3d99518681dbc2c354ed557cc8e2c49df92e.png" src="_images/7ddf7a8c21e2cb98de034baac2cf3d99518681dbc2c354ed557cc8e2c49df92e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -862,11 +863,11 @@ Nilai Closeness Centrality Dokumen Ke - 52 : {0: 0.8, 1: 1.0, 2: 1.0, 4: 1.0, 3:
 Nilai Closeness Centrality Dokumen Ke - 53 : {0: 0.75, 2: 1.0, 3: 1.0, 4: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 54 : {0: 0.4666666666666667, 1: 0.7777777777777778, 2: 0.875, 4: 0.7777777777777778, 5: 0.875, 7: 0.7777777777777778, 3: 0.5833333333333334, 6: 0.7}
 Nilai Closeness Centrality Dokumen Ke - 55 : {0: 0.625, 1: 1.0, 4: 1.0, 2: 0.8333333333333334, 3: 0.8333333333333334, 5: 0.8333333333333334}
-Nilai Closeness Centrality Dokumen Ke - 56 : {}
-Nilai Closeness Centrality Dokumen Ke - 57 : {0: 0.35, 2: 0.37692307692307686, 8: 0.35, 9: 0.44545454545454544, 1: 0.2, 4: 0.2, 5: 0.2, 3: 0.44545454545454544, 6: 0.32666666666666666, 7: 0.2333333333333333, 10: 0.28823529411764703}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 58 : {0: 0.7, 2: 1.0, 4: 0.875, 5: 1.0, 7: 0.875, 1: 0.7, 6: 0.7777777777777778, 3: 0.6363636363636364}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 56 : {}
+Nilai Closeness Centrality Dokumen Ke - 57 : {0: 0.35, 2: 0.37692307692307686, 8: 0.35, 9: 0.44545454545454544, 1: 0.2, 4: 0.2, 5: 0.2, 3: 0.44545454545454544, 6: 0.32666666666666666, 7: 0.2333333333333333, 10: 0.28823529411764703}
+Nilai Closeness Centrality Dokumen Ke - 58 : {0: 0.7, 2: 1.0, 4: 0.875, 5: 1.0, 7: 0.875, 1: 0.7, 6: 0.7777777777777778, 3: 0.6363636363636364}
 Nilai Closeness Centrality Dokumen Ke - 59 : {0: 0.6666666666666666, 1: 0.5, 2: 0.7272727272727273, 3: 0.6153846153846154, 4: 0.8888888888888888, 5: 0.6666666666666666, 8: 0.6153846153846154, 6: 0.6153846153846154, 7: 0.6153846153846154}
 Nilai Closeness Centrality Dokumen Ke - 60 : {0: 0.5, 1: 0.875, 2: 0.7, 3: 0.7777777777777778, 4: 0.875, 5: 0.7777777777777778, 7: 0.6363636363636364, 6: 0.6363636363636364}
 Nilai Closeness Centrality Dokumen Ke - 61 : {}
@@ -919,15 +920,15 @@ Nilai Closeness Centrality Dokumen Ke - 107 : {0: 0.75, 1: 0.631578947368421, 2:
 Nilai Closeness Centrality Dokumen Ke - 108 : {0: 0.4, 1: 0.26666666666666666, 2: 0.26666666666666666, 3: 0.4, 4: 0.26666666666666666, 6: 0.26666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 109 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 110 : {}
-Nilai Closeness Centrality Dokumen Ke - 111 : {0: 0.8, 1: 0.6666666666666666, 3: 0.5714285714285714, 4: 0.5714285714285714, 2: 0.4444444444444444}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 111 : {0: 0.8, 1: 0.6666666666666666, 3: 0.5714285714285714, 4: 0.5714285714285714, 2: 0.4444444444444444}
 Nilai Closeness Centrality Dokumen Ke - 112 : {0: 0.7142857142857143, 2: 1.0, 5: 0.8333333333333334, 6: 0.8333333333333334, 1: 0.8333333333333334, 3: 0.625}
 Nilai Closeness Centrality Dokumen Ke - 113 : {0: 0.36, 3: 0.6, 1: 0.44999999999999996, 6: 0.44999999999999996, 4: 0.2, 5: 0.2}
 Nilai Closeness Centrality Dokumen Ke - 114 : {0: 0.7692307692307693, 1: 0.45454545454545453, 2: 0.5, 3: 0.5263157894736842, 4: 0.5263157894736842, 5: 0.5555555555555556, 6: 0.45454545454545453, 8: 0.625, 7: 0.3448275862068966, 9: 0.47619047619047616, 10: 0.43478260869565216}
 Nilai Closeness Centrality Dokumen Ke - 115 : {0: 0.6875, 1: 0.7857142857142857, 2: 1.0, 4: 0.7857142857142857, 7: 0.7333333333333333, 8: 0.9166666666666666, 10: 0.9166666666666666, 3: 0.6875, 9: 0.7333333333333333, 5: 0.6470588235294118, 6: 0.6875, 12: 0.55}
 Nilai Closeness Centrality Dokumen Ke - 116 : {1: 1.0, 2: 0.625, 3: 0.7142857142857143, 4: 1.0, 5: 0.8333333333333334, 6: 0.7142857142857143}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 117 : {1: 0.8333333333333334, 2: 0.625, 3: 1.0, 4: 0.7142857142857143, 6: 0.625, 5: 0.625}
+Nilai Closeness Centrality Dokumen Ke - 117 : {1: 0.8333333333333334, 2: 0.625, 3: 1.0, 4: 0.7142857142857143, 6: 0.625, 5: 0.625}
 Nilai Closeness Centrality Dokumen Ke - 118 : {1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 119 : {0: 0.55, 1: 0.55, 2: 0.7857142857142857, 5: 0.6875, 10: 0.55, 3: 0.6111111111111112, 4: 0.6470588235294118, 6: 0.5789473684210527, 7: 0.5789473684210527, 8: 0.4583333333333333, 9: 0.4230769230769231, 11: 0.3793103448275862}
 Nilai Closeness Centrality Dokumen Ke - 120 : {0: 0.26685133887349954, 1: 0.3306636155606407, 3: 0.2578055307760928, 5: 0.21125730994152048, 9: 0.3168859649122807, 2: 0.2578055307760928, 4: 0.3104189044038668, 14: 0.36215538847117795, 8: 0.20280701754385963, 6: 0.05263157894736842, 7: 0.05263157894736842, 10: 0.276555023923445, 11: 0.17686658506731945, 16: 0.21729323308270676, 12: 0.3456937799043062, 18: 0.3042105263157895, 19: 0.2535087719298246, 17: 0.21729323308270676, 20: 0.26225045372050815, 21: 0.17686658506731945}
@@ -985,15 +986,15 @@ Nilai Closeness Centrality Dokumen Ke - 171 : {0: 0.75, 2: 1.0, 3: 0.75, 1: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 172 : {0: 0.6, 2: 1.0, 1: 0.6, 4: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 173 : {0: 0.4117647058823529, 1: 0.509090909090909, 3: 0.509090909090909, 9: 0.5833333333333334, 17: 0.4444444444444444, 2: 0.34146341463414637, 4: 0.37333333333333335, 8: 0.56, 10: 0.5283018867924528, 11: 0.4375, 23: 0.56, 24: 0.5283018867924528, 14: 0.5490196078431373, 29: 0.42424242424242425, 5: 0.37333333333333335, 6: 0.4375, 26: 0.5185185185185185, 16: 0.4666666666666667, 21: 0.39436619718309857, 22: 0.4666666666666667, 7: 0.4444444444444444, 15: 0.4745762711864407, 18: 0.3835616438356164, 13: 0.4666666666666667, 12: 0.35, 27: 0.4, 25: 0.3218390804597701, 19: 0.2857142857142857, 20: 0.224}
 Nilai Closeness Centrality Dokumen Ke - 174 : {1: 0.75, 2: 1.0, 4: 1.0, 3: 0.75}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 175 : {1: 0.6666666666666666, 2: 1.0, 3: 0.6666666666666666}
+Nilai Closeness Centrality Dokumen Ke - 175 : {1: 0.6666666666666666, 2: 1.0, 3: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 176 : {0: 0.5833333333333334, 1: 0.6363636363636364, 3: 0.6363636363636364, 5: 0.7, 2: 0.5833333333333334, 6: 0.7, 4: 0.4375, 7: 0.4375}
 Nilai Closeness Centrality Dokumen Ke - 177 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 178 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 179 : {0: 0.4444444444444444, 1: 0.5714285714285714, 2: 0.5161290322580645, 4: 0.5714285714285714, 5: 0.64, 11: 0.7272727272727273, 13: 0.5925925925925926, 16: 0.5517241379310345, 3: 0.32, 10: 0.45714285714285713, 6: 0.48484848484848486, 9: 0.4444444444444444, 7: 0.5333333333333333, 8: 0.4444444444444444, 12: 0.45714285714285713, 15: 0.4, 14: 0.2909090909090909}
 Nilai Closeness Centrality Dokumen Ke - 180 : {0: 1.0, 1: 1.0}
-Nilai Closeness Centrality Dokumen Ke - 181 : {0: 1.0, 2: 1.0, 3: 1.0}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 181 : {0: 1.0, 2: 1.0, 3: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 182 : {0: 0.8333333333333334, 1: 0.8333333333333334, 2: 0.6666666666666666, 4: 0.6666666666666666, 5: 0.625, 6: 0.625, 8: 0.7142857142857143, 9: 0.625, 11: 0.5882352941176471, 10: 0.5, 3: 0.5263157894736842}
 Nilai Closeness Centrality Dokumen Ke - 183 : {0: 0.6666666666666666, 1: 1.0, 2: 0.8, 3: 0.5714285714285714, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 184 : {0: 0.8, 2: 0.8, 3: 0.8, 5: 0.8, 1: 0.6666666666666666}
@@ -1047,15 +1048,15 @@ Nilai Closeness Centrality Dokumen Ke - 231 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 232 : {0: 0.5, 1: 0.9, 2: 0.5625, 3: 0.8181818181818182, 4: 0.6428571428571429, 5: 0.6923076923076923, 6: 0.6923076923076923, 8: 0.6923076923076923, 9: 0.6923076923076923, 7: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 233 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 234 : {0: 0.6, 1: 0.75, 3: 0.8571428571428571, 4: 0.6, 7: 0.6666666666666666, 5: 0.6, 6: 0.5}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 235 : {0: 0.4166666666666667, 3: 0.625, 1: 0.7142857142857143, 2: 0.7142857142857143, 4: 0.625, 5: 0.4166666666666667}
+Nilai Closeness Centrality Dokumen Ke - 235 : {0: 0.4166666666666667, 3: 0.625, 1: 0.7142857142857143, 2: 0.7142857142857143, 4: 0.625, 5: 0.4166666666666667}
 Nilai Closeness Centrality Dokumen Ke - 236 : {0: 0.6470588235294118, 1: 0.4074074074074074, 2: 0.5789473684210527, 3: 0.7333333333333333, 6: 0.7333333333333333, 9: 0.7857142857142857, 11: 0.55, 4: 0.6470588235294118, 5: 0.6470588235294118, 7: 0.6111111111111112, 8: 0.5789473684210527, 10: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 237 : {0: 1.0, 1: 1.0, 2: 1.0, 3: 0.8, 4: 0.8}
 Nilai Closeness Centrality Dokumen Ke - 238 : {0: 1.0, 1: 0.8, 2: 1.0, 3: 0.8, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 239 : {0: 0.7777777777777778, 1: 0.5384615384615384, 2: 0.7777777777777778, 4: 0.7777777777777778, 6: 0.6363636363636364, 8: 0.5384615384615384, 3: 0.6363636363636364, 7: 0.4666666666666667}
 Nilai Closeness Centrality Dokumen Ke - 240 : {0: 0.75, 1: 1.0, 3: 0.75, 2: 0.6}
-Nilai Closeness Centrality Dokumen Ke - 241 : {0: 0.7, 2: 0.5384615384615384, 5: 0.6363636363636364, 6: 0.875, 7: 0.6363636363636364, 3: 0.4117647058823529, 8: 0.5833333333333334, 9: 0.5833333333333334}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 241 : {0: 0.7, 2: 0.5384615384615384, 5: 0.6363636363636364, 6: 0.875, 7: 0.6363636363636364, 3: 0.4117647058823529, 8: 0.5833333333333334, 9: 0.5833333333333334}
 Nilai Closeness Centrality Dokumen Ke - 242 : {0: 0.7142857142857143, 1: 0.8333333333333334, 5: 0.8333333333333334, 6: 1.0, 4: 0.625, 7: 0.625}
 Nilai Closeness Centrality Dokumen Ke - 243 : {0: 0.43214285714285716, 1: 0.5761904761904761, 7: 0.5084033613445378, 10: 0.5401785714285714, 2: 0.5084033613445378, 3: 0.5761904761904761, 5: 0.5761904761904761, 6: 0.6173469387755102, 11: 0.5401785714285714, 9: 0.4801587301587302, 4: 0.4548872180451128, 8: 0.43214285714285716, 12: 0.09523809523809523, 15: 0.14285714285714285, 14: 0.09523809523809523}
 Nilai Closeness Centrality Dokumen Ke - 244 : {0: 0.47058823529411764, 1: 0.8, 3: 0.6666666666666666, 4: 0.6666666666666666, 6: 0.7272727272727273, 7: 0.6153846153846154, 8: 0.8, 2: 0.5, 5: 0.6153846153846154}
@@ -1107,11 +1108,11 @@ Nilai Closeness Centrality Dokumen Ke - 289 : {0: 0.5, 1: 0.5, 3: 0.777777777777
 Nilai Closeness Centrality Dokumen Ke - 290 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 291 : {0: 0.6666666666666666, 1: 0.6666666666666666, 2: 0.8, 5: 0.8888888888888888, 6: 0.8888888888888888, 4: 0.6666666666666666, 8: 0.6153846153846154, 3: 0.5, 7: 0.5333333333333333}
 Nilai Closeness Centrality Dokumen Ke - 292 : {0: 1.0, 1: 1.0}
-Nilai Closeness Centrality Dokumen Ke - 293 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666, 3: 0.5714285714285714, 4: 0.5714285714285714}
-Nilai Closeness Centrality Dokumen Ke - 294 : {0: 0.4444444444444444, 1: 0.7272727272727273, 2: 0.5, 3: 0.7272727272727273, 4: 0.6666666666666666, 5: 0.8, 8: 0.6153846153846154, 6: 0.5333333333333333, 7: 0.5}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 295 : {0: 0.7857142857142857, 1: 0.4583333333333333, 2: 0.6875, 3: 0.6875, 4: 0.7333333333333333, 5: 0.6875, 6: 0.6470588235294118, 7: 0.55, 8: 0.8461538461538461, 9: 0.5238095238095238, 10: 0.5238095238095238, 11: 0.5238095238095238}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 293 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666, 3: 0.5714285714285714, 4: 0.5714285714285714}
+Nilai Closeness Centrality Dokumen Ke - 294 : {0: 0.4444444444444444, 1: 0.7272727272727273, 2: 0.5, 3: 0.7272727272727273, 4: 0.6666666666666666, 5: 0.8, 8: 0.6153846153846154, 6: 0.5333333333333333, 7: 0.5}
+Nilai Closeness Centrality Dokumen Ke - 295 : {0: 0.7857142857142857, 1: 0.4583333333333333, 2: 0.6875, 3: 0.6875, 4: 0.7333333333333333, 5: 0.6875, 6: 0.6470588235294118, 7: 0.55, 8: 0.8461538461538461, 9: 0.5238095238095238, 10: 0.5238095238095238, 11: 0.5238095238095238}
 Nilai Closeness Centrality Dokumen Ke - 296 : {0: 0.6, 1: 0.4, 2: 0.6666666666666666, 4: 0.75, 6: 0.6666666666666666, 3: 0.42857142857142855, 5: 0.5454545454545454}
 Nilai Closeness Centrality Dokumen Ke - 297 : {0: 0.5, 1: 0.7142857142857143, 2: 0.7142857142857143, 3: 0.8333333333333334, 4: 0.5555555555555556, 5: 0.5555555555555556}
 Nilai Closeness Centrality Dokumen Ke - 298 : {0: 0.75, 1: 0.6818181818181818, 2: 0.625, 3: 0.6521739130434783, 6: 0.7894736842105263, 7: 0.75, 12: 0.7142857142857143, 13: 0.7894736842105263, 14: 0.6521739130434783, 18: 0.6818181818181818, 22: 0.6818181818181818, 17: 0.6, 8: 0.5555555555555556, 9: 0.4838709677419355, 15: 0.6, 16: 0.5555555555555556}
@@ -1166,12 +1167,12 @@ Nilai Closeness Centrality Dokumen Ke - 346 : {0: 0.7272727272727273, 1: 0.72727
 Nilai Closeness Centrality Dokumen Ke - 347 : {0: 0.52, 3: 0.5652173913043478, 4: 0.41935483870967744, 6: 0.4482758620689655, 10: 0.6190476190476191, 1: 0.5416666666666666, 12: 0.5652173913043478, 13: 0.6190476190476191, 2: 0.48148148148148145, 9: 0.48148148148148145, 11: 0.3170731707317073, 7: 0.4642857142857143, 8: 0.325, 14: 0.4642857142857143}
 Nilai Closeness Centrality Dokumen Ke - 348 : {0: 1.0, 1: 1.0, 2: 0.8, 3: 0.8, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 349 : {0: 0.75, 1: 1.0, 2: 1.0, 3: 0.75}
-Nilai Closeness Centrality Dokumen Ke - 350 : {0: 0.6666666666666666, 2: 0.8571428571428571, 3: 0.6, 4: 0.5, 1: 0.6, 5: 0.5, 6: 0.5}
-Nilai Closeness Centrality Dokumen Ke - 351 : {0: 0.625, 1: 0.8333333333333334, 3: 0.8333333333333334, 4: 0.8333333333333334, 5: 0.625, 2: 0.625}
-Nilai Closeness Centrality Dokumen Ke - 352 : {0: 1.0, 1: 1.0}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 353 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 350 : {0: 0.6666666666666666, 2: 0.8571428571428571, 3: 0.6, 4: 0.5, 1: 0.6, 5: 0.5, 6: 0.5}
+Nilai Closeness Centrality Dokumen Ke - 351 : {0: 0.625, 1: 0.8333333333333334, 3: 0.8333333333333334, 4: 0.8333333333333334, 5: 0.625, 2: 0.625}
+Nilai Closeness Centrality Dokumen Ke - 352 : {0: 1.0, 1: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 353 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 354 : {0: 0.7142857142857143, 1: 0.7142857142857143, 2: 0.7142857142857143, 3: 0.7142857142857143, 4: 0.7142857142857143, 5: 0.7142857142857143}
 Nilai Closeness Centrality Dokumen Ke - 355 : {}
 Nilai Closeness Centrality Dokumen Ke - 356 : {0: 0.5, 4: 0.8, 1: 0.6666666666666666, 3: 0.5714285714285714, 2: 0.6666666666666666}
@@ -1343,14 +1344,14 @@ Nilai Closeness Centrality Dokumen Ke - 517 : {0: 0.6666666666666666, 1: 1.0, 2:
 Nilai Closeness Centrality Dokumen Ke - 518 : {0: 0.75, 1: 1.0, 2: 1.0, 3: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 519 : {0: 0.875, 1: 1.0, 3: 1.0, 4: 0.875, 5: 1.0, 6: 1.0, 7: 0.875, 2: 0.7}
 Nilai Closeness Centrality Dokumen Ke - 520 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 521 : {0: 1.0, 1: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 521 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 522 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 523 : {0: 0.5, 1: 0.6666666666666666, 2: 0.6153846153846154, 7: 0.7272727272727273, 8: 0.8, 3: 0.7272727272727273, 6: 0.7272727272727273, 5: 0.6666666666666666, 4: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 524 : {0: 0.8333333333333334, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0, 5: 0.8333333333333334}
 Nilai Closeness Centrality Dokumen Ke - 525 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
-Nilai Closeness Centrality Dokumen Ke - 526 : {0: 0.6153846153846154, 1: 0.7272727272727273, 2: 0.6666666666666666, 6: 0.5, 9: 0.5714285714285714, 7: 0.5714285714285714, 3: 0.47058823529411764, 4: 0.5333333333333333, 8: 0.5}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 526 : {0: 0.6153846153846154, 1: 0.7272727272727273, 2: 0.6666666666666666, 6: 0.5, 9: 0.5714285714285714, 7: 0.5714285714285714, 3: 0.47058823529411764, 4: 0.5333333333333333, 8: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 527 : {0: 0.5, 1: 0.5, 6: 0.5, 2: 0.25, 4: 0.25}
 Nilai Closeness Centrality Dokumen Ke - 528 : {0: 0.6363636363636364, 2: 0.5833333333333334, 3: 0.4117647058823529, 4: 0.5, 5: 0.5833333333333334, 1: 0.35, 6: 0.4375, 7: 0.3181818181818182}
 Nilai Closeness Centrality Dokumen Ke - 529 : {0: 0.6, 1: 0.5294117647058824, 2: 0.5294117647058824, 6: 0.47368421052631576, 7: 0.47368421052631576, 4: 0.47368421052631576, 3: 0.34615384615384615, 9: 0.34615384615384615, 5: 0.3333333333333333, 8: 0.42857142857142855}
@@ -1399,16 +1400,16 @@ Nilai Closeness Centrality Dokumen Ke - 571 : {0: 1.0, 2: 1.0, 3: 1.0, 4: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 572 : {0: 1.0, 1: 0.8, 2: 0.8, 3: 0.6666666666666666, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 573 : {0: 0.5714285714285714, 1: 1.0, 2: 0.6666666666666666, 3: 0.8, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 574 : {2: 1.0, 3: 0.75, 4: 1.0, 5: 0.75}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 575 : {0: 0.5833333333333334, 3: 0.5384615384615384, 6: 0.7777777777777778, 1: 0.7, 2: 0.5833333333333334, 4: 0.5833333333333334, 5: 0.5833333333333334, 7: 0.5833333333333334}
+Nilai Closeness Centrality Dokumen Ke - 575 : {0: 0.5833333333333334, 3: 0.5384615384615384, 6: 0.7777777777777778, 1: 0.7, 2: 0.5833333333333334, 4: 0.5833333333333334, 5: 0.5833333333333334, 7: 0.5833333333333334}
 Nilai Closeness Centrality Dokumen Ke - 576 : {0: 0.6666666666666666, 1: 0.46153846153846156, 2: 0.6666666666666666, 5: 0.8571428571428571, 3: 0.5454545454545454, 4: 0.5454545454545454, 6: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 577 : {}
 Nilai Closeness Centrality Dokumen Ke - 578 : {0: 0.5714285714285714, 1: 0.8, 2: 0.8888888888888888, 8: 0.6153846153846154, 4: 0.6666666666666666, 5: 0.7272727272727273, 7: 0.6666666666666666, 3: 0.5333333333333333, 6: 0.4444444444444444}
 Nilai Closeness Centrality Dokumen Ke - 579 : {0: 0.8, 1: 0.5714285714285714, 2: 0.7272727272727273, 3: 0.47058823529411764, 6: 0.7272727272727273, 7: 0.6666666666666666, 8: 0.7272727272727273, 4: 0.5333333333333333, 5: 0.5333333333333333}
 Nilai Closeness Centrality Dokumen Ke - 580 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 581 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666}
-Nilai Closeness Centrality Dokumen Ke - 582 : {0: 0.4, 1: 0.3, 2: 0.5, 5: 0.5454545454545454, 3: 0.35294117647058826, 4: 0.5, 7: 0.35294117647058826}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 582 : {0: 0.4, 1: 0.3, 2: 0.5, 5: 0.5454545454545454, 3: 0.35294117647058826, 4: 0.5, 7: 0.35294117647058826}
 Nilai Closeness Centrality Dokumen Ke - 583 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 584 : {0: 0.5, 5: 0.8333333333333334, 1: 0.625, 6: 0.8333333333333334, 3: 0.7142857142857143, 4: 0.5555555555555556}
 Nilai Closeness Centrality Dokumen Ke - 585 : {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0}
@@ -1459,9 +1460,7 @@ Nilai Closeness Centrality Dokumen Ke - 629 : {0: 0.7777777777777778, 1: 0.875, 
 Nilai Closeness Centrality Dokumen Ke - 630 : {0: 0.36666666666666664, 1: 0.55, 3: 0.44, 5: 0.5116279069767442, 6: 0.5945945945945946, 8: 0.5641025641025641, 13: 0.5116279069767442, 15: 0.4888888888888889, 21: 0.5789473684210527, 22: 0.36666666666666664, 2: 0.4230769230769231, 7: 0.3013698630136986, 14: 0.3013698630136986, 4: 0.3333333333333333, 16: 0.4888888888888889, 9: 0.5365853658536586, 11: 0.4888888888888889, 18: 0.5, 20: 0.4583333333333333, 19: 0.4230769230769231, 10: 0.3728813559322034, 12: 0.3188405797101449, 17: 0.44}
 Nilai Closeness Centrality Dokumen Ke - 631 : {0: 0.75, 1: 1.0, 3: 0.75, 4: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 632 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 633 : {0: 0.2830188679245283, 12: 0.38461538461538464, 1: 0.375, 2: 0.39473684210526316, 4: 0.2777777777777778, 7: 0.38461538461538464, 3: 0.28846153846153844, 14: 0.4166666666666667, 5: 0.4411764705882353, 6: 0.4166666666666667, 9: 0.39473684210526316, 10: 0.3409090909090909, 8: 0.32608695652173914, 13: 0.30612244897959184, 16: 0.375, 15: 0.2777777777777778}
+Nilai Closeness Centrality Dokumen Ke - 633 : {0: 0.2830188679245283, 12: 0.38461538461538464, 1: 0.375, 2: 0.39473684210526316, 4: 0.2777777777777778, 7: 0.38461538461538464, 3: 0.28846153846153844, 14: 0.4166666666666667, 5: 0.4411764705882353, 6: 0.4166666666666667, 9: 0.39473684210526316, 10: 0.3409090909090909, 8: 0.32608695652173914, 13: 0.30612244897959184, 16: 0.375, 15: 0.2777777777777778}
 Nilai Closeness Centrality Dokumen Ke - 634 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 635 : {0: 0.7, 1: 0.7, 2: 0.875, 5: 0.6363636363636364, 8: 0.4666666666666667, 3: 0.5, 4: 0.5, 6: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 636 : {0: 0.7142857142857143, 1: 0.625, 2: 0.625, 4: 0.5555555555555556, 3: 0.45454545454545453, 5: 0.38461538461538464}
@@ -1470,7 +1469,9 @@ Nilai Closeness Centrality Dokumen Ke - 638 : {0: 0.6428571428571429, 2: 0.75, 3
 Nilai Closeness Centrality Dokumen Ke - 639 : {0: 1.0, 2: 1.0, 3: 0.75, 4: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 640 : {0: 0.5833333333333334, 3: 0.5833333333333334, 4: 0.6363636363636364, 7: 0.4375, 1: 0.3181818181818182, 2: 0.5, 6: 0.35, 5: 0.4117647058823529}
 Nilai Closeness Centrality Dokumen Ke - 641 : {}
-Nilai Closeness Centrality Dokumen Ke - 642 : {0: 0.5384615384615384, 1: 0.6363636363636364, 2: 0.7777777777777778, 3: 0.7, 5: 0.6363636363636364, 7: 0.6363636363636364, 8: 0.7777777777777778, 6: 0.5}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 642 : {0: 0.5384615384615384, 1: 0.6363636363636364, 2: 0.7777777777777778, 3: 0.7, 5: 0.6363636363636364, 7: 0.6363636363636364, 8: 0.7777777777777778, 6: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 643 : {0: 0.75, 1: 1.0, 3: 0.75, 2: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 644 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 645 : {0: 0.6, 1: 1.0, 4: 0.75, 2: 0.6666666666666666, 3: 0.75, 5: 0.6, 6: 0.5454545454545454}
@@ -1516,9 +1517,7 @@ Nilai Closeness Centrality Dokumen Ke - 684 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 685 : {0: 0.42857142857142855, 3: 0.6666666666666666, 1: 0.75, 2: 0.46153846153846156, 4: 0.6666666666666666, 6: 0.5454545454545454, 5: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 686 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 687 : {0: 0.8571428571428571, 1: 0.8571428571428571, 2: 0.5454545454545454, 3: 0.8571428571428571, 4: 0.8571428571428571, 6: 0.75, 5: 0.5454545454545454}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 688 : {0: 0.625, 2: 1.0, 4: 0.8333333333333334, 1: 0.625, 5: 0.8333333333333334, 3: 0.7142857142857143}
+Nilai Closeness Centrality Dokumen Ke - 688 : {0: 0.625, 2: 1.0, 4: 0.8333333333333334, 1: 0.625, 5: 0.8333333333333334, 3: 0.7142857142857143}
 Nilai Closeness Centrality Dokumen Ke - 689 : {0: 0.8, 1: 1.0, 3: 0.8, 4: 0.6666666666666666, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 690 : {1: 0.4090909090909091, 4: 0.6, 10: 0.5625, 2: 0.75, 5: 0.5294117647058824, 6: 0.5, 8: 0.5294117647058824, 9: 0.6, 3: 0.391304347826087, 7: 0.391304347826087}
 Nilai Closeness Centrality Dokumen Ke - 691 : {0: 0.75, 1: 1.0, 2: 1.0, 3: 0.75}
@@ -1530,7 +1529,9 @@ Nilai Closeness Centrality Dokumen Ke - 696 : {}
 Nilai Closeness Centrality Dokumen Ke - 697 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 698 : {0: 0.5, 1: 0.8333333333333334, 2: 0.8333333333333334, 4: 0.625, 5: 0.625, 3: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 699 : {0: 0.75, 1: 0.75, 2: 1.0, 3: 0.6}
-Nilai Closeness Centrality Dokumen Ke - 700 : {0: 0.5714285714285714, 1: 0.8, 2: 0.5714285714285714, 3: 0.6666666666666666, 5: 0.4444444444444444}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 700 : {0: 0.5714285714285714, 1: 0.8, 2: 0.5714285714285714, 3: 0.6666666666666666, 5: 0.4444444444444444}
 Nilai Closeness Centrality Dokumen Ke - 701 : {0: 0.5952380952380952, 1: 0.7142857142857143, 2: 0.5952380952380952, 3: 0.5952380952380952, 4: 0.5952380952380952, 5: 0.39682539682539686, 6: 0.14285714285714285, 8: 0.14285714285714285}
 Nilai Closeness Centrality Dokumen Ke - 702 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 703 : {1: 0.5, 2: 0.8, 3: 0.6666666666666666, 5: 0.5, 4: 0.4444444444444444}
@@ -1579,13 +1580,13 @@ Nilai Closeness Centrality Dokumen Ke - 745 : {0: 0.6666666666666666, 1: 0.72727
 Nilai Closeness Centrality Dokumen Ke - 746 : {0: 0.38461538461538464, 6: 0.5555555555555556, 1: 0.625, 2: 0.4166666666666667, 3: 0.7142857142857143, 4: 0.5555555555555556}
 Nilai Closeness Centrality Dokumen Ke - 747 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 748 : {0: 0.5555555555555556, 1: 0.6666666666666666, 8: 0.5263157894736842, 9: 0.9090909090909091, 3: 0.5882352941176471, 4: 0.625, 5: 0.5882352941176471, 10: 0.625, 2: 0.5555555555555556, 6: 0.5882352941176471, 7: 0.38461538461538464}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 749 : {0: 1.0, 1: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 749 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 750 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 751 : {0: 0.6, 4: 0.6923076923076923, 6: 0.8181818181818182, 7: 0.75, 1: 0.8181818181818182, 3: 0.9, 5: 0.6428571428571429, 8: 0.8181818181818182, 9: 0.6428571428571429, 2: 0.6923076923076923}
 Nilai Closeness Centrality Dokumen Ke - 752 : {0: 0.34615384615384615, 4: 0.5, 1: 0.6923076923076923, 5: 0.6428571428571429, 6: 0.6, 7: 0.6428571428571429, 9: 0.6428571428571429, 10: 0.45, 12: 0.45, 11: 0.45}
-Nilai Closeness Centrality Dokumen Ke - 753 : {0: 0.5, 1: 0.6923076923076923, 3: 0.6, 4: 0.5625, 7: 0.5625, 8: 0.5, 9: 0.47368421052631576, 2: 0.3333333333333333, 5: 0.5294117647058824, 6: 0.36}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 753 : {0: 0.5, 1: 0.6923076923076923, 3: 0.6, 4: 0.5625, 7: 0.5625, 8: 0.5, 9: 0.47368421052631576, 2: 0.3333333333333333, 5: 0.5294117647058824, 6: 0.36}
 Nilai Closeness Centrality Dokumen Ke - 754 : {0: 1.0, 1: 0.8333333333333334, 2: 1.0, 3: 0.8333333333333334, 4: 1.0, 5: 0.7142857142857143}
 Nilai Closeness Centrality Dokumen Ke - 755 : {0: 0.75, 1: 0.75, 2: 1.0, 3: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 756 : {0: 0.5833333333333334, 1: 0.7, 2: 0.7, 3: 0.7777777777777778, 6: 0.7777777777777778, 5: 0.7, 4: 0.7, 7: 0.5833333333333334}
@@ -1626,7 +1627,9 @@ Nilai Closeness Centrality Dokumen Ke - 790 : {0: 0.7333333333333333, 1: 0.64705
 Nilai Closeness Centrality Dokumen Ke - 791 : {0: 0.8571428571428571, 1: 0.6666666666666666, 2: 0.6666666666666666, 4: 0.8571428571428571, 5: 0.75, 6: 0.5, 3: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 792 : {0: 0.5789473684210527, 1: 0.5789473684210527, 2: 0.5238095238095238, 6: 0.55, 7: 0.44, 10: 0.5789473684210527, 11: 0.5, 9: 0.6470588235294118, 3: 0.3793103448275862, 5: 0.5789473684210527, 4: 0.3793103448275862, 8: 0.4074074074074074}
 Nilai Closeness Centrality Dokumen Ke - 793 : {0: 1.0, 1: 0.75, 2: 1.0, 3: 0.75}
-Nilai Closeness Centrality Dokumen Ke - 794 : {0: 0.6153846153846154, 1: 0.6666666666666666, 2: 0.7272727272727273, 3: 0.8, 6: 0.6153846153846154, 5: 0.8888888888888888, 4: 0.6153846153846154, 7: 0.6666666666666666, 8: 0.5333333333333333}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 794 : {0: 0.6153846153846154, 1: 0.6666666666666666, 2: 0.7272727272727273, 3: 0.8, 6: 0.6153846153846154, 5: 0.8888888888888888, 4: 0.6153846153846154, 7: 0.6666666666666666, 8: 0.5333333333333333}
 Nilai Closeness Centrality Dokumen Ke - 795 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 796 : {0: 0.6666666666666666, 2: 0.5, 4: 0.75, 5: 0.75, 3: 0.46153846153846156, 6: 0.46153846153846156, 7: 0.46153846153846156}
 Nilai Closeness Centrality Dokumen Ke - 797 : {0: 1.0, 2: 1.0, 3: 1.0}
@@ -1634,9 +1637,7 @@ Nilai Closeness Centrality Dokumen Ke - 798 : {0: 0.4, 2: 0.5714285714285714, 1:
 Nilai Closeness Centrality Dokumen Ke - 799 : {0: 1.0, 1: 1.0, 3: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 800 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 801 : {0: 0.6666666666666666, 2: 1.0, 3: 0.6666666666666666}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 802 : {0: 0.631578947368421, 1: 0.75, 2: 0.75, 7: 0.75, 11: 0.75, 12: 0.6666666666666666, 3: 0.6, 4: 0.5217391304347826, 5: 0.6666666666666666, 6: 0.5217391304347826, 10: 0.7058823529411765, 9: 0.5217391304347826, 8: 0.48}
+Nilai Closeness Centrality Dokumen Ke - 802 : {0: 0.631578947368421, 1: 0.75, 2: 0.75, 7: 0.75, 11: 0.75, 12: 0.6666666666666666, 3: 0.6, 4: 0.5217391304347826, 5: 0.6666666666666666, 6: 0.5217391304347826, 10: 0.7058823529411765, 9: 0.5217391304347826, 8: 0.48}
 Nilai Closeness Centrality Dokumen Ke - 803 : {0: 0.5217391304347826, 1: 0.5217391304347826, 2: 0.5714285714285714, 13: 0.6, 3: 0.5, 9: 0.6, 12: 0.5454545454545454, 5: 0.631578947368421, 11: 0.5217391304347826, 14: 0.6666666666666666, 4: 0.4, 7: 0.41379310344827586, 8: 0.3}
 Nilai Closeness Centrality Dokumen Ke - 804 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 805 : {0: 1.0, 1: 1.0}
@@ -1666,7 +1667,9 @@ Nilai Closeness Centrality Dokumen Ke - 828 : {}
 Nilai Closeness Centrality Dokumen Ke - 829 : {0: 0.5263157894736842, 3: 0.5263157894736842, 7: 0.5263157894736842, 9: 0.4166666666666667, 1: 0.38461538461538464, 5: 0.5, 6: 0.47619047619047616, 8: 0.47619047619047616, 4: 0.3448275862068966, 10: 0.30303030303030304, 11: 0.30303030303030304}
 Nilai Closeness Centrality Dokumen Ke - 830 : {0: 0.7142857142857143, 1: 1.0, 2: 1.0, 3: 1.0, 4: 0.7142857142857143, 5: 0.7142857142857143}
 Nilai Closeness Centrality Dokumen Ke - 831 : {0: 0.6, 1: 0.8, 2: 0.5581395348837209, 3: 0.5853658536585366, 4: 0.75, 6: 0.6, 15: 0.5217391304347826, 19: 0.5714285714285714, 20: 0.5853658536585366, 22: 0.631578947368421, 23: 0.6666666666666666, 5: 0.5, 7: 0.5333333333333333, 9: 0.5581395348837209, 12: 0.5454545454545454, 14: 0.5454545454545454, 16: 0.5454545454545454, 21: 0.4897959183673469, 24: 0.46153846153846156, 8: 0.47058823529411764, 13: 0.47058823529411764, 18: 0.5333333333333333, 10: 0.36923076923076925, 11: 0.3582089552238806, 17: 0.42105263157894735}
-Nilai Closeness Centrality Dokumen Ke - 832 : {0: 1.0, 1: 1.0, 2: 1.0}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 832 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 833 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 834 : {0: 0.8, 1: 0.8, 2: 0.6666666666666666, 3: 1.0, 4: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 835 : {0: 0.4375, 2: 0.7, 1: 0.7777777777777778, 4: 0.7, 5: 0.4666666666666667, 6: 0.7, 8: 0.5, 3: 0.4375}
@@ -1692,9 +1695,7 @@ Nilai Closeness Centrality Dokumen Ke - 854 : {0: 0.6, 1: 1.0, 2: 0.6, 3: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 855 : {0: 0.3333333333333333, 1: 0.5, 2: 0.3333333333333333, 3: 0.25, 4: 0.25}
 Nilai Closeness Centrality Dokumen Ke - 856 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 857 : {0: 1.0, 1: 1.0}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 858 : {0: 1.0, 1: 1.0, 2: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 858 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 859 : {0: 0.8571428571428571, 1: 1.0, 2: 0.8571428571428571, 3: 0.8571428571428571, 4: 0.8571428571428571, 5: 0.8571428571428571, 7: 0.5454545454545454}
 Nilai Closeness Centrality Dokumen Ke - 860 : {1: 1.0, 2: 0.6666666666666666, 3: 0.6666666666666666, 4: 0.8, 5: 0.8}
 Nilai Closeness Centrality Dokumen Ke - 861 : {0: 0.75, 1: 0.75, 2: 1.0, 3: 0.6}
@@ -1713,7 +1714,9 @@ Nilai Closeness Centrality Dokumen Ke - 873 : {0: 0.6, 3: 1.0, 1: 0.75, 2: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 874 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 875 : {0: 0.75, 1: 0.75, 2: 1.0, 3: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 876 : {0: 0.5882352941176471, 2: 0.5555555555555556, 3: 1.0, 9: 0.6666666666666666, 1: 0.5263157894736842, 4: 0.6666666666666666, 5: 0.5882352941176471, 6: 0.5555555555555556, 7: 0.5555555555555556, 8: 0.5882352941176471, 10: 0.625}
-Nilai Closeness Centrality Dokumen Ke - 877 : {1: 0.6666666666666666, 3: 1.0, 5: 0.8, 2: 0.6666666666666666, 4: 0.5714285714285714}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 877 : {1: 0.6666666666666666, 3: 1.0, 5: 0.8, 2: 0.6666666666666666, 4: 0.5714285714285714}
 Nilai Closeness Centrality Dokumen Ke - 878 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 879 : {0: 0.8333333333333334, 1: 0.8333333333333334, 2: 0.8333333333333334, 3: 1.0, 5: 1.0, 4: 0.625}
 Nilai Closeness Centrality Dokumen Ke - 880 : {0: 1.0, 1: 0.8333333333333334, 2: 0.8333333333333334, 3: 1.0, 4: 0.7142857142857143, 5: 1.0}
@@ -1754,11 +1757,11 @@ Nilai Closeness Centrality Dokumen Ke - 914 : {0: 0.2727272727272727, 7: 0.35064
 Nilai Closeness Centrality Dokumen Ke - 915 : {0: 0.8571428571428571, 1: 0.6666666666666666, 2: 0.6, 3: 0.6, 4: 0.5454545454545454, 6: 0.6, 5: 0.4}
 Nilai Closeness Centrality Dokumen Ke - 916 : {0: 0.5714285714285714, 1: 0.8, 4: 0.8, 2: 0.8, 3: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 917 : {}
+Nilai Closeness Centrality Dokumen Ke - 918 : {0: 0.4444444444444444, 1: 0.6666666666666666, 6: 0.8, 2: 0.5, 4: 0.5}
+Nilai Closeness Centrality Dokumen Ke - 919 : {0: 0.5151515151515151, 1: 0.5483870967741935, 8: 0.5483870967741935, 13: 0.53125, 14: 0.4857142857142857, 16: 0.5483870967741935, 2: 0.40476190476190477, 3: 0.6071428571428571, 10: 0.4857142857142857, 11: 0.5, 12: 0.5862068965517241, 4: 0.3953488372093023, 5: 0.4594594594594595, 15: 0.4146341463414634, 6: 0.3469387755102041, 7: 0.26153846153846155, 17: 0.3695652173913043, 18: 0.3695652173913043}
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 918 : {0: 0.4444444444444444, 1: 0.6666666666666666, 6: 0.8, 2: 0.5, 4: 0.5}
-Nilai Closeness Centrality Dokumen Ke - 919 : {0: 0.5151515151515151, 1: 0.5483870967741935, 8: 0.5483870967741935, 13: 0.53125, 14: 0.4857142857142857, 16: 0.5483870967741935, 2: 0.40476190476190477, 3: 0.6071428571428571, 10: 0.4857142857142857, 11: 0.5, 12: 0.5862068965517241, 4: 0.3953488372093023, 5: 0.4594594594594595, 15: 0.4146341463414634, 6: 0.3469387755102041, 7: 0.26153846153846155, 17: 0.3695652173913043, 18: 0.3695652173913043}
-Nilai Closeness Centrality Dokumen Ke - 920 : {0: 1.0, 1: 0.75, 2: 1.0, 3: 0.75}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 920 : {0: 1.0, 1: 0.75, 2: 1.0, 3: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 921 : {0: 0.6428571428571429, 3: 0.6923076923076923, 5: 0.5, 7: 0.5294117647058824, 9: 0.6, 10: 0.6, 1: 0.3103448275862069, 8: 0.42857142857142855, 4: 0.42857142857142855, 6: 0.391304347826087}
 Nilai Closeness Centrality Dokumen Ke - 922 : {0: 0.5555555555555556, 1: 0.46875, 2: 0.5555555555555556, 5: 0.5, 10: 0.5555555555555556, 11: 0.45454545454545453, 16: 0.40540540540540543, 3: 0.38461538461538464, 12: 0.42857142857142855, 13: 0.40540540540540543, 4: 0.26785714285714285, 8: 0.35714285714285715, 6: 0.40540540540540543, 9: 0.29411764705882354, 14: 0.23809523809523808, 15: 0.30612244897959184}
 Nilai Closeness Centrality Dokumen Ke - 923 : {0: 1.0, 1: 1.0}
@@ -1800,7 +1803,9 @@ Nilai Closeness Centrality Dokumen Ke - 958 : {0: 0.7142857142857143, 2: 0.45454
 Nilai Closeness Centrality Dokumen Ke - 959 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 960 : {0: 0.625, 1: 0.8333333333333334, 2: 0.8333333333333334, 3: 0.5, 4: 0.625, 5: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 961 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
-Nilai Closeness Centrality Dokumen Ke - 962 : {1: 0.5454545454545454, 3: 0.42857142857142855, 7: 0.6, 6: 0.3157894736842105, 9: 0.5, 10: 0.46153846153846156, 8: 0.35294117647058826}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 962 : {1: 0.5454545454545454, 3: 0.42857142857142855, 7: 0.6, 6: 0.3157894736842105, 9: 0.5, 10: 0.46153846153846156, 8: 0.35294117647058826}
 Nilai Closeness Centrality Dokumen Ke - 963 : {0: 1.0, 1: 0.75, 2: 0.75, 3: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 964 : {}
 Nilai Closeness Centrality Dokumen Ke - 965 : {0: 0.6666666666666666, 1: 1.0, 2: 0.6666666666666666}
@@ -1811,9 +1816,7 @@ Nilai Closeness Centrality Dokumen Ke - 969 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 970 : {}
 Nilai Closeness Centrality Dokumen Ke - 971 : {0: 1.0, 1: 1.0, 2: 1.0, 3: 1.0, 4: 1.0, 5: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 972 : {0: 0.3333333333333333, 1: 0.3333333333333333, 2: 0.3333333333333333, 3: 0.3333333333333333}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 973 : {0: 1.0, 1: 1.0, 2: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 973 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 974 : {0: 0.8333333333333334, 2: 0.625, 3: 0.5555555555555556, 5: 0.625, 6: 0.5555555555555556, 1: 0.4166666666666667}
 Nilai Closeness Centrality Dokumen Ke - 975 : {0: 0.65, 1: 0.7647058823529411, 2: 0.48148148148148145, 4: 0.65, 7: 0.65, 8: 0.65, 9: 0.6190476190476191, 12: 0.5, 6: 0.65, 11: 0.5416666666666666, 3: 0.4482758620689655, 10: 0.52, 5: 0.40625, 13: 0.3939393939393939}
 Nilai Closeness Centrality Dokumen Ke - 976 : {1: 1.0, 3: 1.0}
@@ -1845,7 +1848,9 @@ Nilai Closeness Centrality Dokumen Ke - 1001 : {0: 1.0, 1: 0.75, 2: 1.0, 3: 0.75
 Nilai Closeness Centrality Dokumen Ke - 1002 : {0: 0.5555555555555556, 1: 0.5555555555555556, 2: 0.8333333333333334, 4: 0.625, 5: 0.7142857142857143, 6: 0.45454545454545453}
 Nilai Closeness Centrality Dokumen Ke - 1003 : {0: 0.75, 2: 0.75, 4: 0.5, 1: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1004 : {0: 1.0, 1: 1.0, 2: 1.0}
-Nilai Closeness Centrality Dokumen Ke - 1005 : {}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1005 : {}
 Nilai Closeness Centrality Dokumen Ke - 1006 : {0: 1.0, 1: 0.8, 2: 1.0, 4: 0.8, 5: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1007 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1008 : {0: 0.8333333333333334, 1: 0.7142857142857143, 2: 0.7142857142857143, 4: 1.0, 5: 0.625, 6: 0.5555555555555556}
@@ -1871,9 +1876,7 @@ Nilai Closeness Centrality Dokumen Ke - 1027 : {0: 0.5, 2: 0.875, 1: 0.7, 3: 0.7
 Nilai Closeness Centrality Dokumen Ke - 1028 : {0: 0.8, 1: 0.6666666666666666, 2: 0.8, 4: 0.5, 7: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1029 : {0: 0.75, 1: 1.0, 3: 1.0, 2: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 1030 : {0: 0.75, 1: 1.0, 2: 1.0, 3: 0.75}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1031 : {0: 0.7, 1: 0.6363636363636364, 2: 0.4666666666666667, 3: 0.7, 4: 0.6363636363636364, 6: 0.7777777777777778, 5: 0.5384615384615384, 7: 0.3684210526315789}
+Nilai Closeness Centrality Dokumen Ke - 1031 : {0: 0.7, 1: 0.6363636363636364, 2: 0.4666666666666667, 3: 0.7, 4: 0.6363636363636364, 6: 0.7777777777777778, 5: 0.5384615384615384, 7: 0.3684210526315789}
 Nilai Closeness Centrality Dokumen Ke - 1032 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1033 : {0: 0.6666666666666666, 1: 0.6666666666666666, 4: 1.0, 2: 0.5714285714285714, 3: 0.5714285714285714}
 Nilai Closeness Centrality Dokumen Ke - 1034 : {0: 0.6363636363636364, 1: 0.6363636363636364, 2: 1.0, 5: 0.6363636363636364, 4: 0.5833333333333334, 3: 0.5384615384615384, 6: 0.5384615384615384, 7: 0.5833333333333334}
@@ -1888,7 +1891,9 @@ Nilai Closeness Centrality Dokumen Ke - 1042 : {0: 0.6153846153846154, 1: 0.4444
 Nilai Closeness Centrality Dokumen Ke - 1043 : {0: 0.3181818181818182, 1: 0.25, 4: 0.3888888888888889, 3: 0.4375, 7: 0.4375, 5: 0.25, 6: 0.3181818181818182, 8: 0.3888888888888889}
 Nilai Closeness Centrality Dokumen Ke - 1044 : {0: 0.5, 1: 0.8, 2: 0.8, 3: 0.6666666666666666, 4: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1045 : {0: 1.0, 1: 1.0}
-Nilai Closeness Centrality Dokumen Ke - 1046 : {0: 0.4166666666666667, 5: 0.625, 1: 0.5555555555555556, 3: 0.8333333333333334, 4: 0.5555555555555556, 2: 0.5}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1046 : {0: 0.4166666666666667, 5: 0.625, 1: 0.5555555555555556, 3: 0.8333333333333334, 4: 0.5555555555555556, 2: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1047 : {0: 0.5555555555555556, 3: 0.8333333333333334, 5: 0.7142857142857143, 1: 0.7142857142857143, 2: 0.45454545454545453, 4: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1048 : {}
 Nilai Closeness Centrality Dokumen Ke - 1049 : {0: 0.5833333333333334, 1: 0.5384615384615384, 5: 0.6666666666666666, 7: 0.7, 8: 0.7368421052631579, 14: 0.56, 6: 0.5384615384615384, 12: 0.6666666666666666, 2: 0.42424242424242425, 4: 0.5, 10: 0.6086956521739131, 3: 0.5833333333333334, 9: 0.7368421052631579, 11: 0.6666666666666666, 13: 0.5}
@@ -1928,13 +1933,13 @@ Nilai Closeness Centrality Dokumen Ke - 1082 : {0: 0.6875, 1: 0.6111111111111112
 Nilai Closeness Centrality Dokumen Ke - 1083 : {0: 0.6666666666666666, 1: 0.4444444444444444, 3: 0.8, 2: 0.5714285714285714, 4: 0.5714285714285714}
 Nilai Closeness Centrality Dokumen Ke - 1084 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 1085 : {0: 0.6666666666666666, 1: 0.8, 2: 0.8, 3: 0.5, 4: 0.5}
-Nilai Closeness Centrality Dokumen Ke - 1086 : {0: 0.4, 1: 0.6153846153846154, 3: 0.8, 9: 0.4, 2: 0.5333333333333333, 4: 0.5333333333333333, 8: 0.5333333333333333, 6: 0.47058823529411764, 7: 0.47058823529411764}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1086 : {0: 0.4, 1: 0.6153846153846154, 3: 0.8, 9: 0.4, 2: 0.5333333333333333, 4: 0.5333333333333333, 8: 0.5333333333333333, 6: 0.47058823529411764, 7: 0.47058823529411764}
 Nilai Closeness Centrality Dokumen Ke - 1087 : {}
 Nilai Closeness Centrality Dokumen Ke - 1088 : {0: 0.8, 2: 0.6666666666666666, 3: 0.8, 4: 0.6666666666666666, 1: 0.6666666666666666}
 Nilai Closeness Centrality Dokumen Ke - 1089 : {0: 0.8, 1: 0.6153846153846154, 2: 0.8, 3: 0.7272727272727273, 4: 0.7272727272727273, 5: 0.5714285714285714, 9: 0.6666666666666666, 10: 0.6666666666666666, 11: 0.5333333333333333}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1090 : {}
+Nilai Closeness Centrality Dokumen Ke - 1090 : {}
 Nilai Closeness Centrality Dokumen Ke - 1091 : {0: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1092 : {0: 0.625, 1: 0.8333333333333334, 4: 0.8333333333333334, 2: 0.5, 3: 0.7142857142857143, 5: 0.5555555555555556}
 Nilai Closeness Centrality Dokumen Ke - 1093 : {0: 0.5384615384615384, 1: 1.0, 2: 0.5833333333333334, 3: 0.875, 4: 0.6363636363636364, 5: 0.6363636363636364, 6: 0.7777777777777778, 7: 0.6363636363636364}
@@ -1968,7 +1973,9 @@ Nilai Closeness Centrality Dokumen Ke - 1120 : {0: 0.5555555555555556, 1: 0.8333
 Nilai Closeness Centrality Dokumen Ke - 1121 : {0: 0.75, 1: 0.8571428571428571, 2: 0.8571428571428571, 4: 0.75, 6: 0.8571428571428571, 5: 0.5454545454545454, 3: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1122 : {0: 0.34615384615384615, 1: 0.5625, 4: 0.5625, 5: 0.5, 6: 0.375, 2: 0.375, 3: 0.375, 7: 0.125, 8: 0.125}
 Nilai Closeness Centrality Dokumen Ke - 1123 : {0: 0.6, 2: 0.6, 5: 0.75, 6: 0.5, 1: 0.375, 4: 0.5454545454545454, 3: 0.4}
-Nilai Closeness Centrality Dokumen Ke - 1124 : {0: 0.6666666666666666, 1: 0.8, 2: 0.8, 4: 0.5, 3: 0.5}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1124 : {0: 0.6666666666666666, 1: 0.8, 2: 0.8, 4: 0.5, 3: 0.5}
 Nilai Closeness Centrality Dokumen Ke - 1125 : {0: 0.6923076923076923, 1: 0.75, 5: 0.8181818181818182, 7: 0.8181818181818182, 9: 0.6428571428571429, 10: 0.5, 2: 0.5625, 3: 0.5625, 6: 0.6428571428571429, 8: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 1126 : {0: 1.0, 1: 1.0, 2: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1127 : {0: 0.6666666666666666, 1: 0.75, 2: 0.75, 3: 1.0, 6: 0.6666666666666666, 4: 0.75, 5: 0.6}
@@ -1993,9 +2000,7 @@ Nilai Closeness Centrality Dokumen Ke - 1145 : {0: 0.75, 1: 1.0, 2: 0.75, 3: 0.6
 Nilai Closeness Centrality Dokumen Ke - 1146 : {0: 0.375, 1: 0.375, 2: 0.375, 4: 0.375, 3: 0.2222222222222222, 6: 0.3333333333333333, 5: 0.2222222222222222}
 Nilai Closeness Centrality Dokumen Ke - 1147 : {0: 0.75, 1: 0.6, 2: 0.8571428571428571, 3: 0.6666666666666666, 4: 0.46153846153846156, 5: 0.5, 7: 0.5454545454545454}
 Nilai Closeness Centrality Dokumen Ke - 1148 : {0: 1.0, 1: 0.6666666666666666, 2: 0.6666666666666666}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1149 : {0: 1.0, 1: 1.0}
+Nilai Closeness Centrality Dokumen Ke - 1149 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1150 : {}
 Nilai Closeness Centrality Dokumen Ke - 1151 : {0: 0.75, 1: 1.0, 3: 0.75, 2: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 1152 : {}
@@ -2008,7 +2013,9 @@ Nilai Closeness Centrality Dokumen Ke - 1158 : {0: 0.5454545454545454, 2: 0.6315
 Nilai Closeness Centrality Dokumen Ke - 1159 : {0: 0.5555555555555556, 3: 0.8333333333333334, 5: 0.7142857142857143, 1: 0.5555555555555556, 4: 0.7142857142857143, 6: 0.8333333333333334}
 Nilai Closeness Centrality Dokumen Ke - 1160 : {0: 0.6, 1: 1.0, 3: 0.6, 4: 0.6}
 Nilai Closeness Centrality Dokumen Ke - 1161 : {0: 0.5, 1: 0.8333333333333334, 2: 0.625, 4: 0.7142857142857143, 5: 0.7142857142857143, 3: 0.625}
-Nilai Closeness Centrality Dokumen Ke - 1162 : {0: 0.75, 1: 1.0, 3: 1.0, 2: 0.75}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nilai Closeness Centrality Dokumen Ke - 1162 : {0: 0.75, 1: 1.0, 3: 1.0, 2: 0.75}
 Nilai Closeness Centrality Dokumen Ke - 1163 : {0: 0.5102040816326531, 2: 0.5102040816326531, 3: 0.44642857142857145, 5: 0.39682539682539686, 6: 0.5102040816326531, 7: 0.5494505494505495, 10: 0.44642857142857145, 1: 0.39682539682539686, 4: 0.44642857142857145, 12: 0.39682539682539686, 8: 0.12857142857142856, 14: 0.21428571428571427, 13: 0.28571428571428575, 11: 0.12857142857142856, 15: 0.12857142857142856}
 Nilai Closeness Centrality Dokumen Ke - 1164 : {0: 1.0, 1: 1.0}
 Nilai Closeness Centrality Dokumen Ke - 1165 : {0: 0.6666666666666666, 1: 0.5882352941176471, 2: 0.7692307692307693, 3: 0.5882352941176471, 4: 0.5882352941176471, 5: 0.625, 6: 0.5882352941176471, 9: 0.625, 10: 0.6666666666666666, 8: 0.45454545454545453, 7: 0.4}
@@ -2060,7 +2067,7 @@ Nilai Closeness Centrality Dokumen Ke - 1200 : {}
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-45d00683-efc0-4266-a2ac-e1673636b30a" class="colab-df-container">
+  <div id="df-aa832f13-54c6-4104-a276-ec8fdc7a0594" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -2146,7 +2153,7 @@ Nilai Closeness Centrality Dokumen Ke - 1200 : {}
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-45d00683-efc0-4266-a2ac-e1673636b30a')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-aa832f13-54c6-4104-a276-ec8fdc7a0594')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -2198,12 +2205,12 @@ Nilai Closeness Centrality Dokumen Ke - 1200 : {}
 
     <script>
       const buttonEl =
-        document.querySelector('#df-45d00683-efc0-4266-a2ac-e1673636b30a button.colab-df-convert');
+        document.querySelector('#df-aa832f13-54c6-4104-a276-ec8fdc7a0594 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-45d00683-efc0-4266-a2ac-e1673636b30a');
+        const element = document.querySelector('#df-aa832f13-54c6-4104-a276-ec8fdc7a0594');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -2416,12 +2423,12 @@ weighted avg       0.91      0.90      0.90       360
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="scrapingbanten.html"
+       href="ekstraksi_kataa.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Scraping bantennews.com</p>
+        <p class="prev-next-title">EKSTRAKSI KATA KUNCI</p>
       </div>
     </a>
     <a class="right-next"
