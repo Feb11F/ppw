@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tugas_2';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="LDA TOPIC MODELING" href="CLDA.html" />
+    <link rel="next" title="TUGAS 3 CLOSENESS CENTRALITY" href="ppw.html" />
     <link rel="prev" title="Crawling PTA" href="CrawlingPTA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,7 +174,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="CLDA.html">LDA TOPIC MODELING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapingbanten.html">Scraping bantennews.com</a></li>
 <li class="toctree-l1"><a class="reference internal" href="berita1.html">TUGAS 4</a></li>
@@ -487,7 +486,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6a9570ff-9bc4-4a74-9ceb-9c35cc43cf24" class="colab-df-container">
+  <div id="df-a1ff24be-0f19-4d5d-9178-da6352ce3cc6" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -609,7 +608,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-6a9570ff-9bc4-4a74-9ceb-9c35cc43cf24')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a1ff24be-0f19-4d5d-9178-da6352ce3cc6')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -661,12 +660,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-6a9570ff-9bc4-4a74-9ceb-9c35cc43cf24 button.colab-df-convert');
+        document.querySelector('#df-a1ff24be-0f19-4d5d-9178-da6352ce3cc6 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-6a9570ff-9bc4-4a74-9ceb-9c35cc43cf24');
+        const element = document.querySelector('#df-a1ff24be-0f19-4d5d-9178-da6352ce3cc6');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -801,7 +800,7 @@ Name: Tokenizing, Length: 828, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-189ea330-8bb1-4cfe-998e-34655e4c6ba2" class="colab-df-container">
+  <div id="df-5419c41a-b24c-415b-836b-85f644d9ed62" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -959,7 +958,7 @@ Name: Tokenizing, Length: 828, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-189ea330-8bb1-4cfe-998e-34655e4c6ba2')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5419c41a-b24c-415b-836b-85f644d9ed62')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1011,12 +1010,12 @@ Name: Tokenizing, Length: 828, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-189ea330-8bb1-4cfe-998e-34655e4c6ba2 button.colab-df-convert');
+        document.querySelector('#df-5419c41a-b24c-415b-836b-85f644d9ed62 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-189ea330-8bb1-4cfe-998e-34655e4c6ba2');
+        const element = document.querySelector('#df-5419c41a-b24c-415b-836b-85f644d9ed62');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1171,39 +1170,11 @@ Name: Full Text, Length: 828, dtype: object
 <span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         #step 4, 5</span>
-<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">         self.remove_prefixes()</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span><span class="s2">         for i in range(3):</span>
-<span class="ne">---&gt; </span><span class="mi">89</span><span class="s2">             self.accept_prefix_visitors(self.prefix_pisitors)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         removalCount = len(self.removals)</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
-<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
-<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="s2">     def accept(self, visitor):</span>
-<span class="ne">---&gt; </span><span class="mi">97</span><span class="s2">         visitor.visit(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="s2">     def accept_visitors(self, visitors):</span>
-
-<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">         for disambiguator in self.disambiguators:</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2">             result = disambiguator.disambiguate(context.current_word)</span>
-<span class="ne">---&gt; </span><span class="mi">15</span><span class="s2">             if context.dictionary.contains(result):</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2">                 break</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="s2">         #step 1</span>
+<span class="ne">---&gt; </span><span class="mi">48</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="s2">             return</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span><span class="s2">         self.accept_visitors(self.visitors)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -3435,11 +3406,11 @@ Name: Full Text, Length: 828, dtype: object
       </div>
     </a>
     <a class="right-next"
-       href="CLDA.html"
+       href="ppw.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LDA TOPIC MODELING</p>
+        <p class="prev-next-title">TUGAS 3 CLOSENESS CENTRALITY</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
