@@ -177,9 +177,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA TOPIC MODELING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapingbanten.html">Scraping bantennews.com</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ekstraksi_kataa.html">EKSTRAKSI KATA KUNCI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="berita1.html">TUGAS 4</a></li>
-<li class="toctree-l1"><a class="reference internal" href="uas.html"><strong>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ekstraksi_kataa.html">EKSTRAKSI KATA KUNCI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="uas.html"><strong>UAS</strong></a></li>
 </ul>
 
     </div>
@@ -434,7 +434,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: Sastrawi in /usr/local/lib/python3.10/dist-packages (1.0.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">30.7/209.7 kB</span> <span class=" -Color -Color-Red">1.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">92.2/209.7 kB</span> <span class=" -Color -Color-Red">1.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 kB</span> <span class=" -Color -Color-Red">2.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
 </pre></div>
 </div>
 </div>
@@ -487,7 +499,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-9646c3fa-3b98-407c-a3c9-2824da9a4ff2" class="colab-df-container">
+  <div id="df-64c3d5da-d29c-471f-a64b-cd952ec983f3" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -609,7 +621,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-9646c3fa-3b98-407c-a3c9-2824da9a4ff2')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-64c3d5da-d29c-471f-a64b-cd952ec983f3')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -661,12 +673,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-9646c3fa-3b98-407c-a3c9-2824da9a4ff2 button.colab-df-convert');
+        document.querySelector('#df-64c3d5da-d29c-471f-a64b-cd952ec983f3 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-9646c3fa-3b98-407c-a3c9-2824da9a4ff2');
+        const element = document.querySelector('#df-64c3d5da-d29c-471f-a64b-cd952ec983f3');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -801,7 +813,7 @@ Name: Tokenizing, Length: 828, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8a2c0e1b-3ebe-453a-8b0f-fc33497f35d0" class="colab-df-container">
+  <div id="df-a3af6300-edf4-4f10-a20b-988665048881" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -959,7 +971,7 @@ Name: Tokenizing, Length: 828, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-8a2c0e1b-3ebe-453a-8b0f-fc33497f35d0')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-a3af6300-edf4-4f10-a20b-988665048881')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1011,12 +1023,12 @@ Name: Tokenizing, Length: 828, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-8a2c0e1b-3ebe-453a-8b0f-fc33497f35d0 button.colab-df-convert');
+        document.querySelector('#df-a3af6300-edf4-4f10-a20b-988665048881 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-8a2c0e1b-3ebe-453a-8b0f-fc33497f35d0');
+        const element = document.querySelector('#df-a3af6300-edf4-4f10-a20b-988665048881');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1171,11 +1183,11 @@ Name: Full Text, Length: 828, dtype: object
 <span class="g g-Whitespace">     </span><span class="mi">39</span><span class="s2">         #step 6</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">start_stemming_process</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">         if csPrecedenceAdjustmentSpecification.is_satisfied_by(self.original_word):</span>
-<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="s2">             #step 4, 5</span>
-<span class="ne">---&gt; </span><span class="mi">60</span><span class="s2">             self.remove_prefixes()</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span><span class="s2">                 return</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         #step 4, 5</span>
+<span class="ne">---&gt; </span><span class="mi">80</span><span class="s2">         self.remove_prefixes()</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span><span class="s2">         if self.dictionary.contains(self.current_word):</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">             return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">remove_prefixes</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">     </span><span class="mi">87</span><span class="s2">     def remove_prefixes(self):</span>
@@ -1185,11 +1197,25 @@ Name: Full Text, Length: 828, dtype: object
 <span class="g g-Whitespace">     </span><span class="mi">91</span><span class="s2">                 return</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept_prefix_visitors</span><span class="nt">(self, visitors)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="s2">         removalCount = len(self.removals)</span>
 <span class="g g-Whitespace">    </span><span class="mi">109</span><span class="s2">         for visitor in visitors:</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
-<span class="ne">--&gt; </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
+<span class="ne">--&gt; </span><span class="mi">110</span><span class="s2">             self.accept(visitor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span><span class="s2">             if self.dictionary.contains(self.current_word):</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span><span class="s2">                 return self.current_word</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span><span class="s2">             if self.process_is_stopped:</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Context.py</span> in <span class="ni">accept</span><span class="nt">(self, visitor)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span><span class="s2">     def accept(self, visitor):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span><span class="s2">         visitor.visit(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span><span class="s2">     def accept_visitors(self, visitors):</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/Sastrawi/Stemmer/Context/Visitor/AbstractDisambiguatePrefixRule.py</span> in <span class="ni">visit</span><span class="nt">(self, context)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">         for disambiguator in self.disambiguators:</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2">             result = disambiguator.disambiguate(context.current_word)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span><span class="s2">             if context.dictionary.contains(result):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2">                 break</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span><span class="s2"> </span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes) &#8212; DataMining</title>
+    <title>UAS &#8212; DataMining</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'uas';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="TUGAS 4" href="berita1.html" />
+    <link rel="prev" title="EKSTRAKSI KATA KUNCI" href="ekstraksi_kataa.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -176,9 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA TOPIC MODELING</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ppw.html">TUGAS 3 CLOSENESS CENTRALITY</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scrapingbanten.html">Scraping bantennews.com</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ekstraksi_kataa.html">EKSTRAKSI KATA KUNCI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="berita1.html">TUGAS 4</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ekstraksi_kataa.html">EKSTRAKSI KATA KUNCI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>UAS</strong></a></li>
 </ul>
 
     </div>
@@ -395,7 +395,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)</h1>
+    <h1>UAS</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -445,11 +445,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="proyek-akhir-pencarian-dan-penambangan-web-klasifikasi-berita-dengan-reduksi-dimensi-latent-dirichlet-allocation-lda-menggunakan-metode-naive-bayes">
-<h1><strong>Proyek Akhir Pencarian Dan Penambangan WEB (Klasifikasi Berita dengan Reduksi Dimensi Latent Dirichlet Allocation (LDA) menggunakan Metode Naive Bayes)</strong><a class="headerlink" href="#proyek-akhir-pencarian-dan-penambangan-web-klasifikasi-berita-dengan-reduksi-dimensi-latent-dirichlet-allocation-lda-menggunakan-metode-naive-bayes" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="uas">
+<h1><strong>UAS</strong><a class="headerlink" href="#uas" title="Permalink to this heading">#</a></h1>
 <section id="deployment">
 <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://ppw-uas.streamlit.app/">Link Streamlit</a></p>
+<p><a class="reference external" href="https://feb11f.github.io/ppw/intro.html">Link Streamlit</a></p>
 </section>
 <section id="import-library">
 <h2>Import Library<a class="headerlink" href="#import-library" title="Permalink to this heading">#</a></h2>
@@ -485,27 +485,11 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Kode di atas adalah impor pustaka dan modul yang diperlukan untuk melakukan analisis teks dengan Naive Bayes, termasuk penggunaan Latent Dirichlet Allocation (LDA) untuk reduksi dimensi dan ekstraksi fitur teks. Berikut penjelasan singkat tentang setiap modul yang diimpor:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.decomposition</span> <span class="pre">import</span> <span class="pre">LatentDirichletAllocation</span></code>: Ini mengimpor modul LatentDirichletAllocation dari pustaka Scikit-Learn. LDA adalah algoritma yang digunakan untuk reduksi dimensi dalam analisis teks, terutama untuk topik modeling.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.model_selection</span> <span class="pre">import</span> <span class="pre">train_test_split</span></code>: Modul <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> dari Scikit-Learn digunakan untuk membagi dataset ke dalam subset pelatihan dan pengujian. Ini adalah langkah yang umum dalam pemodelan dan evaluasi.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.naive_bayes</span> <span class="pre">import</span> <span class="pre">GaussianNB</span></code>: Ini mengimpor modul <code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code> dari Scikit-Learn, yang merupakan implementasi Naive Bayes dengan distribusi Gaussian. Ini adalah salah satu varian algoritma Naive Bayes yang dapat digunakan dalam klasifikasi.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.metrics</span> <span class="pre">import</span> <span class="pre">accuracy_score,</span> <span class="pre">classification_report,</span> <span class="pre">confusion_matrix</span></code>: Ini mengimpor beberapa modul yang digunakan untuk mengevaluasi kinerja model klasifikasi. <code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code> digunakan untuk mengukur akurasi model, <code class="docutils literal notranslate"><span class="pre">classification_report</span></code> memberikan ringkasan berbagai metrik evaluasi, dan <code class="docutils literal notranslate"><span class="pre">confusion_matrix</span></code> digunakan untuk menganalisis hasil klasifikasi.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">sklearn.feature_extraction.text</span> <span class="pre">import</span> <span class="pre">CountVectorizer</span></code>: Modul <code class="docutils literal notranslate"><span class="pre">CountVectorizer</span></code> digunakan untuk mengubah teks menjadi vektor Term Frequensi (TF), yang dapat digunakan sebagai fitur dalam pemodelan klasifikasi.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">joblib</span></code>: Ini mengimpor modul <code class="docutils literal notranslate"><span class="pre">joblib</span></code>, yang dapat digunakan untuk menyimpan dan memuat model yang telah dilatih.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">pandas</span> <span class="pre">as</span> <span class="pre">pd</span></code>: Modul <code class="docutils literal notranslate"><span class="pre">pandas</span></code> digunakan untuk manipulasi data, termasuk membaca dan menyimpan data dalam bentuk DataFrame.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">warnings</span></code>: Modul <code class="docutils literal notranslate"><span class="pre">warnings</span></code> digunakan untuk mengelola dan menghilangkan peringatan yang muncul selama proses eksekusi kode.</p></li>
-</ul>
+<p>Kode di atas adalah impor pustaka dan modul yang diperlukan untuk melakukan analisis teks dengan Naive Bayes, termasuk penggunaan Latent Dirichlet Allocation (LDA) untuk reduksi dimensi dan ekstraksi fitur teks\</p>
 </section>
 <section id="load-dataset-transform-to-term-frequency">
 <h2>Load Dataset (transform to Term Frequency)<a class="headerlink" href="#load-dataset-transform-to-term-frequency" title="Permalink to this heading">#</a></h2>
-<p>Dalam kode di bawah, program ini menggunakan pustaka <code class="docutils literal notranslate"><span class="pre">pandas</span></code> untuk membaca sebuah file CSV dari lokasi yang diberikan, dan kemudian menampilkan isi DataFrame tersebut. Ini berguna ketika Anda ingin memuat dan mengeksplorasi data dari file CSV yang sudah ada.</p>
-<p>Berikut penjelasan singkatnya:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv('/content/drive/MyDrive/Kuliah</span> <span class="pre">/Semester</span> <span class="pre">7/Pencarian</span> <span class="pre">Dan</span> <span class="pre">Penambangan</span> <span class="pre">Web/ppw/pages/Term</span> <span class="pre">Frequensi.csv')</span></code>: Ini adalah perintah yang menggunakan <code class="docutils literal notranslate"><span class="pre">pandas</span></code> untuk membaca data dari file CSV yang terletak pada jalur tertentu. Anda memberikan jalur lengkap ke file CSV yang ingin dibaca, dan hasilnya dimuat ke dalam variabel <code class="docutils literal notranslate"><span class="pre">df</span></code>. Variabel <code class="docutils literal notranslate"><span class="pre">df</span></code> adalah objek DataFrame yang berisi data dari file CSV.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df</span></code>: Setelah Anda membaca data dari file CSV ke dalam DataFrame, perintah ini akan menampilkan seluruh isi DataFrame tersebut.</p></li>
-</ul>
-<p>Jadi, dengan melakukan perintah tersebut, Anda telah memuat data dari file CSV ke dalam DataFrame dan menampilkan isi dari DataFrame tersebut di lingkungan kerja Anda, yang memungkinkan Anda untuk melihat, menganalisis, atau melakukan operasi lain pada data tersebut.</p>
+<p>Dalam kode di bawah, program ini menggunakan pustaka <code class="docutils literal notranslate"><span class="pre">pandas</span></code> untuk membaca sebuah file CSV dari lokasi yang diberikan,</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/Feb11F/dataset/main/beritabanten%20(1).csv&#39;</span><span class="p">)</span>
@@ -515,7 +499,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-488ff91f-12b1-4ddb-a96c-ddbd2892c0d8" class="colab-df-container">
+  <div id="df-54001d3b-3500-4751-881a-6b2399f89697" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -625,7 +609,7 @@ document.write(`
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-488ff91f-12b1-4ddb-a96c-ddbd2892c0d8')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-54001d3b-3500-4751-881a-6b2399f89697')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -677,12 +661,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-488ff91f-12b1-4ddb-a96c-ddbd2892c0d8 button.colab-df-convert');
+        document.querySelector('#df-54001d3b-3500-4751-881a-6b2399f89697 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-488ff91f-12b1-4ddb-a96c-ddbd2892c0d8');
+        const element = document.querySelector('#df-54001d3b-3500-4751-881a-6b2399f89697');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -845,7 +829,7 @@ Name: Full Text, Length: 1200, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3802c4d5-2d3e-42e1-b7cf-fb824b11e92b" class="colab-df-container">
+  <div id="df-b0b8cc2d-ead3-4597-b2fc-eddd2c7c6b23" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1159,7 +1143,7 @@ Name: Full Text, Length: 1200, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-3802c4d5-2d3e-42e1-b7cf-fb824b11e92b')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-b0b8cc2d-ead3-4597-b2fc-eddd2c7c6b23')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1211,12 +1195,12 @@ Name: Full Text, Length: 1200, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-3802c4d5-2d3e-42e1-b7cf-fb824b11e92b button.colab-df-convert');
+        document.querySelector('#df-b0b8cc2d-ead3-4597-b2fc-eddd2c7c6b23 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-3802c4d5-2d3e-42e1-b7cf-fb824b11e92b');
+        const element = document.querySelector('#df-b0b8cc2d-ead3-4597-b2fc-eddd2c7c6b23');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1256,7 +1240,7 @@ Name: Full Text, Length: 1200, dtype: object
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b97d3fb9-0e56-49d3-bf31-75c2c5ea73b1" class="colab-df-container">
+  <div id="df-d9c5c51b-4814-45bf-9431-05da5cfc3de0" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1570,7 +1554,7 @@ Name: Full Text, Length: 1200, dtype: object
     <div class="colab-df-buttons">
       
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-b97d3fb9-0e56-49d3-bf31-75c2c5ea73b1')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d9c5c51b-4814-45bf-9431-05da5cfc3de0')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
       
@@ -1622,12 +1606,12 @@ Name: Full Text, Length: 1200, dtype: object
 
     <script>
       const buttonEl =
-        document.querySelector('#df-b97d3fb9-0e56-49d3-bf31-75c2c5ea73b1 button.colab-df-convert');
+        document.querySelector('#df-d9c5c51b-4814-45bf-9431-05da5cfc3de0 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-b97d3fb9-0e56-49d3-bf31-75c2c5ea73b1');
+        const element = document.querySelector('#df-d9c5c51b-4814-45bf-9431-05da5cfc3de0');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1751,19 +1735,28 @@ Name: Kategori, Length: 1200, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.3, Beta: 0.1, Accuracy: 0.5805555555555556
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.3, Beta: 0.1, Accuracy: 0.49722222222222223
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.3, Beta: 0.2, Accuracy: 0.6333333333333333
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.3, Beta: 0.2, Accuracy: 0.6722222222222223
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.4, Beta: 0.1, Accuracy: 0.46944444444444444
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.4, Beta: 0.1, Accuracy: 0.6722222222222223
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.4, Beta: 0.2, Accuracy: 0.5277777777777778
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 3, Alpha: 0.4, Beta: 0.2, Accuracy: 0.7444444444444445
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 4, Alpha: 0.3, Beta: 0.1, Accuracy: 0.7083333333333334
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 4, Alpha: 0.3, Beta: 0.1, Accuracy: 0.8166666666666667
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 4, Alpha: 0.3, Beta: 0.2, Accuracy: 0.5888888888888889
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 4, Alpha: 0.4, Beta: 0.1, Accuracy: 0.7305555555555555
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Topik: 4, Alpha: 0.4, Beta: 0.2, Accuracy: 0.7555555555555555
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1802,11 +1795,67 @@ Name: Kategori, Length: 1200, dtype: object
 <span class="g g-Whitespace">    </span><span class="mi">670</span>                     <span class="p">)</span>
 
 <span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/decomposition/_lda.py</span> in <span class="ni">_em_step</span><span class="nt">(self, X, total_samples, batch_update, parallel)</span>
-<span class="g g-Whitespace">    </span><span class="mi">536</span>         <span class="c1"># update `component_` related variables</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>         <span class="bp">self</span><span class="o">.</span><span class="n">exp_dirichlet_component_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">538</span>             <span class="n">_dirichlet_expectation_2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">539</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="bp">self</span><span class="o">.</span><span class="n">n_batch_iter_</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">515</span> 
+<span class="g g-Whitespace">    </span><span class="mi">516</span>         <span class="c1"># E-step</span>
+<span class="ne">--&gt; </span><span class="mi">517</span>         <span class="n">_</span><span class="p">,</span> <span class="n">suff_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_e_step</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">518</span>             <span class="n">X</span><span class="p">,</span> <span class="n">cal_sstats</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_init</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parallel</span><span class="o">=</span><span class="n">parallel</span>
+<span class="g g-Whitespace">    </span><span class="mi">519</span>         <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/decomposition/_lda.py</span> in <span class="ni">_e_step</span><span class="nt">(self, X, cal_sstats, random_init, parallel)</span>
+<span class="g g-Whitespace">    </span><span class="mi">458</span>         <span class="k">if</span> <span class="n">parallel</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>             <span class="n">parallel</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">460</span>         <span class="n">results</span> <span class="o">=</span> <span class="n">parallel</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span>             <span class="n">delayed</span><span class="p">(</span><span class="n">_update_doc_distribution</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>                 <span class="n">X</span><span class="p">[</span><span class="n">idx_slice</span><span class="p">,</span> <span class="p">:],</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">61</span>             <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span>         <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">63</span>         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span> 
+<span class="g g-Whitespace">     </span><span class="mi">65</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1861</span>             <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_sequential_output</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1862</span>             <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1863</span>             <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1864</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1865</span>         <span class="c1"># Let&#39;s create an ID that uniquely identifies the current call. If the</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/joblib/parallel.py</span> in <span class="ni">_get_sequential_output</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1790</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_batches</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1791</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">n_dispatched_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="ne">-&gt; </span><span class="mi">1792</span>                 <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1793</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">n_completed_tasks</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1794</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">print_progress</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/utils/parallel.py</span> in <span class="ni">__call__</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>             <span class="n">config</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>         <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/sklearn/decomposition/_lda.py</span> in <span class="ni">_update_doc_distribution</span><span class="nt">(X, exp_topic_word_distr, doc_topic_prior, max_doc_update_iter, mean_change_tol, cal_sstats, random_state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>             <span class="n">cnts</span> <span class="o">=</span> <span class="n">X_data</span><span class="p">[</span><span class="n">X_indptr</span><span class="p">[</span><span class="n">idx_d</span><span class="p">]</span> <span class="p">:</span> <span class="n">X_indptr</span><span class="p">[</span><span class="n">idx_d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">123</span>             <span class="n">ids</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">idx_d</span><span class="p">,</span> <span class="p">:])[</span><span class="mi">0</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>             <span class="n">cnts</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">idx_d</span><span class="p">,</span> <span class="n">ids</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> 
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/numpy/core/overrides.py</span> in <span class="ni">nonzero</span><span class="nt">(*args, **kwargs)</span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/numpy/core/fromnumeric.py</span> in <span class="ni">nonzero</span><span class="nt">(a)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1956</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1957</span>     <span class="s2">&quot;&quot;&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1958</span><span class="s2">     return _wrapfunc(a, &#39;nonzero&#39;)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1959</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1960</span><span class="s2"> </span>
+
+<span class="nn">/usr/local/lib/python3.10/dist-packages/numpy/core/fromnumeric.py</span> in <span class="ni">_wrapfunc</span><span class="nt">(obj, method, *args, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span><span class="s2"> </span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span><span class="s2">     try:</span>
+<span class="ne">---&gt; </span><span class="mi">57</span><span class="s2">         return bound(*args, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span><span class="s2">     except TypeError:</span>
+<span class="g g-Whitespace">     </span><span class="mi">59</span><span class="s2">         # A TypeError occurs if the object does have such a method in its</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -2203,9 +2252,6 @@ Name: Kategori, Length: 1200, dtype: object
 <section id="lda">
 <h3>LDA<a class="headerlink" href="#lda" title="Permalink to this heading">#</a></h3>
 <p>Dalam langkah berikutnya, saya menggunakan algoritma yang disebut Latent Dirichlet Allocation atau LDA untuk mengurangi dimensi data teks. LDA adalah algoritma yang membantu saya mengidentifikasi topik-topik utama yang muncul dalam dokumen-dokumen saya. Hasil dari ini adalah representasi dokumen-dalam-topik, yang artinya kita menggambarkan setiap dokumen sebagai kombinasi dari topik-topik yang ada.</p>
-<p>Kami menerapkan LDA pada data pelatihan, yang menghasilkan matriks yang disebut <code class="docutils literal notranslate"><span class="pre">lda_x_train</span></code>. Matriks ini berisi representasi dokumen-dalam-topik untuk data pelatihan. Ini adalah cara kita menggambarkan hubungan antara dokumen dan topik dalam data pelatihan.</p>
-<p>Kemudian, saya menggunakan model LDA yang sudah kita latih pada data pelatihan untuk mengubah data pengujian menjadi representasi dokumen-dalam-topik yang saya sebut sebagai <code class="docutils literal notranslate"><span class="pre">lda_x_test</span></code>. Ini membantu saya dalam memahami bagaimana dokumen-dokumen pengujian terkait dengan topik-topik yang telah saya identifikasi sebelumnya.</p>
-<p>Dengan mengubah data teks ke dalam representasi topik-topik ini, saya memungkinkan penggunaan informasi ini dalam analisis lebih lanjut atau dalam pemodelan klasifikasi. Ini adalah salah satu cara di mana saya dapat mengolah dan memahami data teks dengan lebih baik.”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lda</span> <span class="o">=</span> <span class="n">best_param</span><span class="p">[</span><span class="s1">&#39;lda&#39;</span><span class="p">]</span>
@@ -3164,12 +3210,12 @@ Confusion Matriks:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="berita1.html"
+       href="ekstraksi_kataa.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TUGAS 4</p>
+        <p class="prev-next-title">EKSTRAKSI KATA KUNCI</p>
       </div>
     </a>
 </div>
